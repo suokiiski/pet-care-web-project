@@ -16,3 +16,22 @@ footer {
   margin-top: auto;
   padding: 8px;
 }
+
+.logoFooter {
+  height: 50px;
+  width: 177px;
+}
+
+.someIcon {
+  padding: 10px;
+}
+
+.someIconsContainer {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.footerH5 {
+  font-weight: bolder;
+  margin-top: 10px;
+}
