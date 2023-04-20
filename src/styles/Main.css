@@ -1,4 +1,17 @@
+* {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.main_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 article {
+  max-width: 345px;
+  justify-content: center;
   border: 1px solid grey;
   border-radius: 15px;
   margin: 20px;
@@ -18,8 +31,9 @@ figcaption {
   margin-left: 5%;
 }
 .nimi_container,
-.comment_container {
+.btn_container > ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 .tel {
@@ -32,21 +46,20 @@ figcaption {
   color: green;
   cursor: pointer;
 }
-.comment_container {
+.btn_container {
   margin-top: 10px;
 }
 
-.comment_btn {
+.edit_btn {
   border: 1px solid grey;
-  border-radius: 25px;
-  padding: 5px 15px;
+  border-radius: 50%;
+  padding: 5px 7px;
 }
-.comment_btn:hover,
-.comment_btn:focus {
+.edit_btn:hover,
+.edit_btn:focus {
   box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
   -webkit-box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
   -moz-box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
   cursor: pointer;
-  background-color: grey;
   color: #fff;
 }

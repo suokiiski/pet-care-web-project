@@ -29,10 +29,23 @@ function Main() {
             puh. 123-456-7890
           </a>
         </div>
-        <p class="comment_container">
-          <em>If you have any questions, add them to the comments.</em>
-          <span class="comment_btn">Leave a comment</span>
-        </p>
+        <div class="btn_container">
+          {/* <em>If you have any questions, call me.</em> */}
+          <ul>
+            <li
+              class="edit_btn"
+              title="you can edit article (opening modal window)"
+            >
+              &#9998;
+            </li>
+            <li class="edit_btn" title="delete the whole article">
+              🗑
+            </li>
+            <li class="edit_btn" title="save for the future">
+              ⭐
+            </li>
+          </ul>
+        </div>
       </article>
     </div>
   );
