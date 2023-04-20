@@ -11,10 +11,10 @@ body {
 }
 
 footer {
-  background-color: gray;
+  background-color: white;
   text-align: center;
   margin-top: auto;
-  padding: 8px;
+  padding: 0;
 }
 
 .logoFooter {
@@ -27,19 +27,40 @@ footer {
   text-align: left;
 }
 
-.someIconsContainer {
-  margin-left: 0;
-  padding-left: 0;
-}
-
 .ulFooter {
   list-style-type: none;
   text-align: left;
+  font-size: 18px;
+  margin: 0;
   padding: 0;
+}
+
+.icons{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.liFooter {
+  padding: 5px;
+  margin: 10px;
 }
 
 .h6Footer {
   font-weight: bolder;
-  margin-top: 10px;
+  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  padding: 5px;
   text-align: left;
+  font-size: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.footerLogoSection {
+  background-color: gray;
+  margin: 0;
 }

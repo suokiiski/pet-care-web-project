@@ -1,17 +1,17 @@
 import React from 'react';
 import { SocialIcon } from 'react-social-icons';
-import { MDBIcon } from 'mdb-react-ui-kit';
+//import { MDBIcon } from 'mdb-react-ui-kit';
 
 const Footer = () => {
     const year = new Date().getFullYear();
 
     return (
         <footer>
-            <img className='logoFooter' src="./images/logo-mini.png" alt="logo"/>
-            <div className='container someIconsContainer'>
+            <hr></hr>
+            <div className='container footerContainer'>
                 <div className='row'>
-                    <div className='col-sm-2'>
-                        <ul className='ulFooter '>
+                    <div className='col-sm-2 icons'>
+                        <ul className='ulFooter'>
                             <li className='someIcon'>
                                 <SocialIcon url="https://twitter.com" />
                             </li>
@@ -30,34 +30,36 @@ const Footer = () => {
                     <div className='col-sm-3'>
                         <h6 className='h6Footer'>Contact us</h6>
                         <ul className='ulFooter'>
-                            <li>
+                            <li className='liFooter'>
                                 Helsinki, Myllypuro
                             </li>
-                            <li>+358 666 13 13</li>
-                            <li>feedback@petnanny.com</li>
+                            <li className='liFooter'>+358 666 13 13</li>
+                            <li className='liFooter'>feedback@petnanny.com</li>
                         </ul>
                     </div>
 
                     <div className='col-sm-3'>
                         <h6 className='h6Footer'>Company</h6>
                         <ul className='ulFooter'>
-                            <li>History</li>
-                            <li>Blog</li>
-                            <li>About Us</li>
+                            <li className='liFooter'><a className='link' href=''>History</a></li>
+                            <li className='liFooter'><a className='link' href=''>Blog</a></li>
+                            <li className='liFooter'><a className='link' href=''>About Us</a></li>
                         </ul>
                     </div>
 
                     <div className='col-sm-3'>
                         <h6 className='h6Footer'>Terms & Policy</h6>
                         <ul className='ulFooter'>
-                            <li>Policies</li>
-                            <li>Terms of use</li>
-                            <li>Privacy</li>
+                            <li className='liFooter'><a className='link' href=''>Policies</a></li>
+                            <li className='liFooter'><a className='link' href=''>Terms of use</a></li>
+                            <li className='liFooter'><a className='link' href=''>Privacy</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <p>Copyright © Pet Nanny {year}</p>
+            <section className='footerLogoSection'>
+                <img className='logoFooter' src="./images/logo-mini.png" alt="logo"/>
+            </section>
         </footer>
     )
 }
