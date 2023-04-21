@@ -6,6 +6,8 @@ ul {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
+  border: none;
+  background-color: #fff;
 }
 
 .main_container {

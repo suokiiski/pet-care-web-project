@@ -32,7 +32,7 @@ const Article = ({ src, alt, nimi, tel, text, figcaption, id, cat }) => {
             class="edit_btn"
             title="you can edit article (opening modal window)"
           >
-            &#9998;
+            <button>&#9998;</button>
           </li>
           <li class="edit_btn" title="delete the whole article">
             🗑
