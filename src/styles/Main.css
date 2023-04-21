@@ -1,6 +1,9 @@
-* {
+*,
+ul {
   text-decoration: none;
   list-style-type: none;
+  padding: 0px;
+  margin: 0px;
 }
 
 .main_container {
@@ -12,16 +15,22 @@
 article {
   max-width: 345px;
   justify-content: center;
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
   border-radius: 15px;
   margin: 20px;
   padding: 20px;
+
+  box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
+  -webkit-box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
+  -moz-box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
 }
 
 img {
   display: flex;
   justify-content: center;
-  width: 95%;
+  min-width: 271px;
+  max-width: 95%;
+  height: 192px;
   margin: auto;
   object-fit: cover;
   border: 1px solid #fff;
@@ -35,6 +44,7 @@ figcaption {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding-inline-start: 0px;
 }
 .tel {
   text-decoration: none;
@@ -42,8 +52,8 @@ figcaption {
 }
 .tel:hover,
 .tel:focus {
+  color: inherit;
   text-decoration: underline;
-  color: green;
   cursor: pointer;
 }
 .btn_container {
