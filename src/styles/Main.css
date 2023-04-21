@@ -1,3 +1,5 @@
+/* ====================MAIN======================== */
+
 *,
 ul {
   text-decoration: none;
@@ -39,6 +41,9 @@ img {
 figcaption {
   margin-left: 5%;
 }
+.text {
+  min-height: 192px;
+}
 .nimi_container,
 .btn_container > ul {
   display: flex;
@@ -46,7 +51,16 @@ figcaption {
   justify-content: space-around;
   padding-inline-start: 0px;
 }
+.nimi {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
 .tel {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
   text-decoration: none;
   color: inherit;
 }
@@ -73,3 +87,28 @@ figcaption {
   cursor: pointer;
   color: #fff;
 }
+/* ===============END MAIN============================= */
+
+/* =================SCROLLBAR=================== */
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(97, 97, 97);
+}
+/* ==================END SCROLLBAR============ */

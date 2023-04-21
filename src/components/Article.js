@@ -4,16 +4,23 @@ const Article = ({ src, alt, nimi, tel, text, figcaption, id, cat }) => {
   return (
     <article class="article" id={id}>
       <figure>
-        <img src={src} alt={alt} />
+        <img
+          src={
+            src
+              ? src
+              : "https://previews.123rf.com/images/yuliaglam/yuliaglam1202/yuliaglam120200313/12670415-dog-cat-icon.jpg"
+          }
+          alt={alt}
+        />
         <figcaption>{figcaption}</figcaption>
       </figure>
 
-      <p>{text}</p>
+      <p class="text">{text}</p>
       <div class="nimi_container">
-        <p class="nimi">
+        <h2 class="nimi">
           {cat ? "😺" : "🐶"}&nbsp;
           {nimi}
-        </p>
+        </h2>
         <a href="tel:123-456-7890" class="tel">
           puh. {tel}
         </a>
