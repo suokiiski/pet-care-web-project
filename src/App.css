@@ -1,57 +1,36 @@
-.header {
-  padding: 12px 18px;
-  background: rgb(66, 129, 87);
-  color: #fff;
-  text-align: center;
-  font-size: 30px;
-  display: flex;
-  flex-flow: row;
-}
-
-nav {
-margin-left: auto;
-}
-
-.fixedTop {
-  width: 100%;
-  padding: 12px 18px;
-  position: fixed;
-  top: 0;
-  background: rgb(251, 4, 235);
-}
-
-.no-bullets {
-  list-style: none;
-}
-
-
-.header li {
-  display: inline-block;
-  margin-right: 30px;
-  margin-top: 12px;
-}
-
-.header li a {
-  color: white;
-  list-style: none;
-  text-decoration: none;
-}
-
-.header img {
+.container-fluid img {
   height: 75px;
   margin-right: 10px;
 }
 
-/*
-main-block tulee laittaa aina ns body tagiin
-*/
-.main-block {
-  padding: 16px;
-  max-width: 900px;
-  margin: 0 auto;
-  font-size: 18px;
+nav {
+  background-color: #428157FF;
+  color: #ffffff;
+  font-size: 23px;
+
 }
 
-.fixedTop + .main-block {
-  padding-top: 102px;
+.nav-item a {
+  color: #ffffff;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 10px;
+  border-radius: 20px;
+}
+
+.nav-item a:hover {
+  color: #428157;
+  background-color: #ffffff;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 10px;
+  border-radius: 20px;
+}
+
+.collapse {
+  background-color: #428157FF;
+}
+
+.custom-toggler .navbar-toggler {
+  border-color: #ffffff;
 }
