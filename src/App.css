@@ -1,0 +1,38 @@
+
+.container-fluid img {
+  height: 75px;
+  margin-right: 10px;
+}
+
+nav {
+  background-color: #428157FF;
+  color: #ffffff;
+  font-size: 23px;
+
+}
+
+.nav-item a {
+  color: #ffffff;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 10px;
+  border-radius: 20px;
+}
+
+.nav-item a:hover {
+  color: #428157;
+  background-color: #ffffff;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 10px;
+  border-radius: 20px;
+}
+
+.collapse {
+  background-color: #428157FF;
+}
+
+.custom-toggler .navbar-toggler {
+  border-color: #ffffff;
+}
+
