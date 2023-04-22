@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "src": "https://www.ifolor.fi/content/dam/ifolor/inspire-gallery/FI/kuvauskoulu/lemmikkikuvaus-kissat/nain-otat-hyvia-kuvia-kissastasi.jpg.transform/q60/image.jpg?nain-otat-hyvia-kuvia-kissastasi.jpg",
+    "alt": "Mirri kuva",
+    "figcaption": "Mirri, 5v",
+    "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also",
+    "nimi": "Juha Kopa",
+    "tel": "123-456-7890",
+    "cat": true
+  },
+  {
+    "id": 1,
+    "src": "https://cdn.pixabay.com/photo/2017/09/25/13/12/puppy-2785074__340.jpg",
+    "alt": "Silver kuva",
+    "figcaption": "Silver, 1v",
+    "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make",
+    "nimi": "Antti Järvi",
+    "tel": "000-000-0000",
+    "cat": false
+  },
+  {
+    "id": 2,
+    "src": "",
+    "alt": "Miia kuva",
+    "figcaption": "Miia, 2.5v",
+    "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type",
+    "nimi": "Anton Järvenpää",
+    "tel": "000-000-0000",
+    "cat": true
+  },
+  {
+    "id": 3,
+    "src": "https://www.ifolor.fi/content/dam/ifolor/inspire-gallery/FI/kuvauskoulu/lemmikkikuvaus-kissat/nain-otat-hyvia-kuvia-kissastasi.jpg.transform/q60/image.jpg?nain-otat-hyvia-kuvia-kissastasi.jpg",
+    "alt": "Mirri kuva",
+    "figcaption": "Mirri, 5v",
+    "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also",
+    "nimi": "Juha Kopa",
+    "tel": "123-456-7890",
+    "cat": true
+  },
+  {
+    "id": 4,
+    "src": "https://cdn.pixabay.com/photo/2017/09/25/13/12/puppy-2785074__340.jpg",
+    "alt": "Silver kuva",
+    "figcaption": "Silver, 1v",
+    "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make",
+    "nimi": "Antti Järvi",
+    "tel": "000-000-0000",
+    "cat": false
+  },
+  {
+    "id": 5,
+    "src": "",
+    "alt": "Miia kuva",
+    "figcaption": "Miia, 2.5v",
+    "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type",
+    "nimi": "Anton Järpää",
+    "tel": "000-000-0000",
+    "cat": true
+  }
+]
