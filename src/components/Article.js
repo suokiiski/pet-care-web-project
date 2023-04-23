@@ -10,6 +10,7 @@ const Article = ({ src, alt, nimi, tel, text, figcaption, id, cat }) => {
               ? src
               : "https://previews.123rf.com/images/yuliaglam/yuliaglam1202/yuliaglam120200313/12670415-dog-cat-icon.jpg"
           }
+          className="img"
           alt={alt}
         />
         <figcaption>{figcaption}</figcaption>
@@ -29,16 +30,16 @@ const Article = ({ src, alt, nimi, tel, text, figcaption, id, cat }) => {
         {/* <em>If you have any questions, call me.</em> */}
         <ul>
           <li
-            class="edit_btn"
+            class="edit_btn edit"
             title="you can edit article (opening modal window)"
           >
             <button>&#9998;</button>
           </li>
-          <li class="edit_btn" title="delete the whole article">
-            🗑
+          <li class="edit_btn bin" title="delete the whole article">
+            <button>&#10060;</button>
           </li>
-          <li class="edit_btn" title="save for the future">
-            ⭐
+          <li class="edit_btn star" title="save for the future">
+            <button>⭐</button>
           </li>
         </ul>
       </div>

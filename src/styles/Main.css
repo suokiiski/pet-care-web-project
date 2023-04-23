@@ -1,13 +1,20 @@
 /* ====================MAIN======================== */
 
-*,
-ul {
+.edit_btn,
+.edit_btn > button {
   text-decoration: none;
   list-style-type: none;
-  padding: 0px;
+  padding: 0px 2px;
   margin: 0px;
   border: none;
-  background-color: #fff;
+  background-color: inherit;
+  border: none;
+}
+.edit_btn.bin > button {
+  margin: 0px -2px;
+}
+.edit_btn.star > button {
+  margin: 0px -2px;
 }
 
 .main_container {
@@ -29,7 +36,7 @@ article {
   -moz-box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
 }
 
-img {
+.img {
   display: flex;
   justify-content: center;
   min-width: 271px;
@@ -37,7 +44,7 @@ img {
   height: 192px;
   margin: auto;
   object-fit: cover;
-  border: 1px solid #fff;
+  border: 1px solid inherit;
   border-radius: 15px;
 }
 figcaption {
