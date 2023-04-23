@@ -1,9 +1,12 @@
 const express = require('express');
+const cors = require('cors');
+
 const app = express();
 const data = require('../data.json');
 const port = 3001;
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/notes', (req, res) => {
     console.log(data);
