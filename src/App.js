@@ -6,8 +6,6 @@ import posterService from './services/posters'
 import logo from './logo.svg';
 //styles
 import './App.css';
-//data
-//import data from "./data.json";
 
 import { useState, useEffect } from 'react';
 
