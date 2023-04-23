@@ -23,6 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 /src/backend/node_modules
 /src/backend/node_modules
-/src/backend/.env
+/.env
 /src/backend/node_modules/.bin
 /.gitignore
+/.env

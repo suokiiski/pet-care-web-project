@@ -1,27 +1,30 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-
 const app = express();
+
+const Note = require('./models/note');
+
+//poistettava
 const data = require('../data.json');
-const port = 3001;
+const {response} = require("express");
+
+//poistettava
+const url = `mongodb+srv://verafi:FaqKBmZq0sUmQn7l@cluster0.0o5m3zy.mongodb.net/?retryWrites=true&w=majority`
 
 app.use(express.json());
 app.use(cors());
 
 app.get('/notes', (req, res) => {
-    console.log(data);
-    res.json(data);
+    Note.find({}).then(notes => {
+        res.json(notes)
+    })
 });
 
 app.get('/notes/:id', (req, res) => {
-    const id = Number(req.params.id);
-
-    const note = data.find(item => item.id === id);
-    if (note) {
+    Note.findById(req.params.id).then(note => {
         res.json(note);
-      } else {
-        res.status(404).end();
-      }
+    })
 });
 
 app.delete('/notes/:id', (req, res) => {
@@ -36,41 +39,35 @@ app.delete('/notes/:id', (req, res) => {
 app.post('/notes', (req, res) => {
     const body = req.body;
 
-    if(!body.text) {
+    if(body.text === undefined) {
         return res.status(400).json({ 
             error: 'description missing' 
         });    
-    } else if(!body.nimi) {
+    } else if(body.nimi === undefined) {
         return res.status(400).json({ 
             error: 'name missing' 
         }); 
-    } else if(!body.tel) {
+    } else if(body.tel === undefined) {
         return res.status(400).json({ 
             error: 'phone number missing' 
         }); 
     }
 
-    const newNote = {
-        id: generateId(),
-        src: body.src || 'https://i.pinimg.com/originals/6f/df/bc/6fdfbc41d6a8e26d4b9073bc1afd899f.jpg',
-        alt: 'Pet photo',
-        figcaption: 'Pet photo',
+    //Tässä voi olla virheitä
+    const newNote = new Note ({
+        src: body.src || 'https://img.freepik.com/free-vector/american-bobtail-cat-doodle-element-vector_53876-151536.jpg?w=740&t=st=1682273176~exp=1682273776~hmac=f964e2113497f3eeebd7a7b41cac535694a2817622d6cfdf688765aaf9a1691e',
         text: body.text,
         nimi: body.nimi,
         tel: body.tel,
-        cat: false
-    }
+        cat: body.cat
+    });
 
-    data.concat(newNote);
-    res.json(newNote);
-})
+    newNote.save()
+        .then(savedNote => {
+        res.json(savedNote);
+        });
+});
 
-const generateId = () => {
-    const maxId = data.length > 0
-    ? Math.max(...data.map(d => d.id))
-    : 0
 
-    return maxId + 1;
-}
-
-app.listen(port, () => console.log(`Server running on port ${port}`));
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
