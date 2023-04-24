@@ -1,10 +1,11 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import '../styles/Header.css'
 
 const Header = () => {
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark">
+        <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-#428157FF">
             <div className="container-fluid">
 
                 <img className='header' id='header' src="./images/logo.png" alt="logo"/>

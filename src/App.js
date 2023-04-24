@@ -2,7 +2,7 @@
 import Main from "./components/Main";
 import Header from "./components/header";
 import Footer from './components/footer'
-import logo from './logo.svg';
+import HeroSection from "./components/Hero";
 //styles
 import './App.css';
 //data
@@ -15,6 +15,7 @@ function App() {
   return (
     <div className="App">
         <Header/>
+        <HeroSection/>
         <Main data={data} />;
       <Footer />
     </div>

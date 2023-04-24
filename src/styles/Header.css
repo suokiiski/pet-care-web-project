@@ -1,0 +1,42 @@
+nav {
+    background-color: #428157FF;
+    color: #ffffff;
+    font-size: 23px;
+}
+
+.container-fluid img {
+    height: 75px;
+    margin-right: 10px;
+    background-color: #428157FF;
+}
+
+.navbar {
+--bs-navbar-color: #428157FF;
+}
+
+.collapse {
+    background-color: #428157FF;
+}
+
+.custom-toggler .navbar-toggler {
+    border-color: #ffffff;
+    background-color: #428157FF;
+}
+
+.nav-item a {
+    background-color: #428157FF;
+    color: #ffffff;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 10px;
+    border-radius: 20px;
+}
+
+.nav-item a:hover {
+    color: #428157;
+    background-color: #ffffff;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 10px;
+    border-radius: 20px;
+}
