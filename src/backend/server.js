@@ -2,21 +2,28 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const mongoose = require('mongoose');
 
 const Note = require('./models/note');
 
 const {response} = require("express");
+const bodyParser = require("body-parser");
+
+//for authentication system
+const User = require('./models/user');
+const bcrypt = require('bcrypt');
 
 app.use(express.json());
 app.use(cors());
+app.use(bodyParser.json());
 
-app.get('/notes', (req, res) => {
+app.get('/api/notes', (req, res) => {
     Note.find({}).then(notes => {
         res.json(notes)
     })
 });
 
-app.get('/notes/:id', (req, res) => {
+app.get('/api/notes/:id', (req, res) => {
     Note.findById(req.params.id)
         .then(note => {
             if(note) {
@@ -31,7 +38,7 @@ app.get('/notes/:id', (req, res) => {
         })
 });
 
-app.delete('/notes/:id', (req, res) => {
+app.delete('/api/notes/:id', (req, res) => {
     Note.findByIdAndRemove(req.params.id)
         .then(result => {
             res.status(204).end();
@@ -41,7 +48,7 @@ app.delete('/notes/:id', (req, res) => {
         })
 })
 
-app.post('/notes', (req, res) => {
+app.post('/api/notes', (req, res) => {
     const body = req.body;
 
     if(body.text === undefined) {
@@ -72,7 +79,7 @@ app.post('/notes', (req, res) => {
         });
 });
 
-app.put('/notes/:id', (req, res) => {
+app.put('/api/notes/:id', (req, res) => {
     const body = req.body;
 
     const newNote = {
@@ -90,6 +97,23 @@ app.put('/notes/:id', (req, res) => {
         .catch(error => {
             res.status(400).end();
         })
+})
+
+//USER AUTHENTICATION STUFF STARTS HERE
+
+//mongoose.connect('mongodb://localhost:3001/user-auth');
+
+app.post('/api/register', async (req, res) => {
+    const {login, password} = req.body;
+
+    console.log('password', password);
+
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(password.toString(), salt);
+    console.log('hash', hash);
+
+    console.log(req.body);
+    res.json({status: 'ok'});
 })
 
 const PORT = process.env.PORT || 3001;

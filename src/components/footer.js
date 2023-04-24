@@ -3,7 +3,6 @@ import { SocialIcon } from 'react-social-icons';
 //import { MDBIcon } from 'mdb-react-ui-kit';
 
 const Footer = () => {
-    const year = new Date().getFullYear();
 
     return (
         <footer>

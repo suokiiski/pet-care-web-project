@@ -8,10 +8,10 @@ const url = `mongodb+srv://verafi:FaqKBmZq0sUmQn7l@cluster0.0o5m3zy.mongodb.net/
 console.log('connecting to the', url);
 mongoose.connect(url)
     .then(result => {
-        console.log('connected no MongoDB');
+        console.log('connected no MongoDB 1');
     })
     .catch((error) => {
-        console.log('error connecting to MongoDB:', error.message);
+        console.log('error connecting to MongoDB 1:', error.message);
     });
 
 const noteSchema = new mongoose.Schema({
