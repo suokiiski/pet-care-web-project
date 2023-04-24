@@ -1,123 +1,14 @@
 /* ====================MAIN======================== */
 
-.edit_btn,
-.edit_btn > button {
-  text-decoration: none;
-  list-style-type: none;
-  padding: 0px 2px;
-  margin: 0px;
-  border: none;
-  background-color: inherit;
-  border: none;
-}
-.edit_btn.bin > button {
-  margin: 0px -2px;
-}
-.edit_btn.star > button {
-  margin: 0px -2px;
-}
-
 .main_container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-article {
-  max-width: 345px;
-  justify-content: center;
-  /* border: 1px solid grey; */
-  border-radius: 15px;
-  margin: 20px;
-  padding: 20px;
-
-  box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
-  -webkit-box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
-  -moz-box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
-}
-
-.img {
-  display: flex;
-  justify-content: center;
-  min-width: 271px;
-  max-width: 95%;
-  height: 192px;
-  margin: auto;
-  object-fit: cover;
-  border: 1px solid inherit;
-  border-radius: 15px;
-}
-figcaption {
-  margin-left: 5%;
-}
-.text {
-  min-height: 192px;
-}
-.nimi_container,
-.btn_container > ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding-inline-start: 0px;
-}
-.nimi {
-  display: inline-block;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-}
-.tel {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  text-decoration: none;
-  color: inherit;
-}
-.tel:hover,
-.tel:focus {
-  color: inherit;
-  text-decoration: underline;
-  cursor: pointer;
-}
-.btn_container {
-  margin-top: 10px;
-}
-
-.edit_btn {
-  border: 1px solid grey;
-  border-radius: 50%;
-  padding: 5px 7px;
-}
-.edit_btn:hover,
-.edit_btn:focus {
-  box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
-  -webkit-box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
-  -moz-box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
-  cursor: pointer;
-  color: #fff;
-}
 /* ===============END MAIN============================= */
 
-/* =================SCROLLBAR=================== */
-/* width */
-::-webkit-scrollbar {
-  width: 15px;
+.add-new-article-btn {
+  border: 1px solid grey;
+  border-radius: 15px;
 }
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: grey;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(97, 97, 97);
-}
-/* ==================END SCROLLBAR============ */
