@@ -1,8 +1,10 @@
+//styles
 import "../styles/Main.css";
+import "../styles/Article.css";
 
 const Article = ({ src, alt, nimi, tel, text, figcaption, id, cat }) => {
   return (
-    <article class="article" id={id}>
+    <article className="article" id={id}>
       <figure>
         <img
           src={
@@ -10,35 +12,35 @@ const Article = ({ src, alt, nimi, tel, text, figcaption, id, cat }) => {
               ? src
               : "https://previews.123rf.com/images/yuliaglam/yuliaglam1202/yuliaglam120200313/12670415-dog-cat-icon.jpg"
           }
-          className="img"
+          className="article_img"
           alt={alt}
         />
-        <figcaption>{figcaption}</figcaption>
+        <figcaption className="article_figcaption">{figcaption}</figcaption>
       </figure>
 
-      <p class="text">{text}</p>
-      <div class="nimi_container">
-        <h2 class="nimi">
+      <p className="article_text">{text}</p>
+      <div className="article_nimi_container">
+        <h2 className="article_nimi">
           {cat ? "😺" : "🐶"}&nbsp;
           {nimi}
         </h2>
-        <a href="tel:123-456-7890" class="tel">
+        <a href="tel:123-456-7890" className="article_tel">
           puh. {tel}
         </a>
       </div>
-      <div class="btn_container">
+      <div className="article_btn_container">
         {/* <em>If you have any questions, call me.</em> */}
         <ul>
           <li
-            class="edit_btn edit"
+            className="edit_btn edit"
             title="you can edit article (opening modal window)"
           >
             <button>&#9998;</button>
           </li>
-          <li class="edit_btn bin" title="delete the whole article">
+          <li className="edit_btn bin" title="delete the whole article">
             <button>&#10060;</button>
           </li>
-          <li class="edit_btn star" title="save for the future">
+          <li className="edit_btn star" title="save for the future">
             <button>⭐</button>
           </li>
         </ul>
