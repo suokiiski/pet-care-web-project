@@ -28,7 +28,6 @@ class AddNewArticle extends Component {
   // * new state
   handleChange = ({ target }) => {
     const { name, value, checked, type } = target;
-    console.log(target.name);
     //checked ? checked : value
     this.setState({ [name]: type === "checkbox" ? checked : value });
   };
@@ -99,7 +98,7 @@ class AddNewArticle extends Component {
           placeholder="Enter text here..."
           class="label textarea"
           name="text"
-          onchange="function(){alert('why does this not work')}()"
+          value={text}
         />
 
         <Stack direction="row" spacing={1} alignItems="center" value={cat}>
