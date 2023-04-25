@@ -1,0 +1,13 @@
+.form_add_new_article {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.add_new_img {
+  background-color: #fff;
+}
+.form_submit_btn {
+  display: block;
+}

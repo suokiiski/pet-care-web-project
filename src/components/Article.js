@@ -1,4 +1,6 @@
+//styles
 import "../styles/Main.css";
+import "../styles/Article.css";
 
 const Article = ({ src, alt, nimi, tel, text, figcaption, id, cat }) => {
   return (
@@ -10,23 +12,23 @@ const Article = ({ src, alt, nimi, tel, text, figcaption, id, cat }) => {
               ? src
               : "https://previews.123rf.com/images/yuliaglam/yuliaglam1202/yuliaglam120200313/12670415-dog-cat-icon.jpg"
           }
-          className="img"
+          className="article_img"
           alt={alt}
         />
-        <figcaption>{figcaption}</figcaption>
+        <figcaption className="article_figcaption">{figcaption}</figcaption>
       </figure>
 
-      <p className="text">{text}</p>
-      <div className="nimi_container">
-        <h2 className="nimi">
+      <p className="article_text">{text}</p>
+      <div className="article_nimi_container">
+        <h2 className="article_nimi">
           {cat ? "😺" : "🐶"}&nbsp;
           {nimi}
         </h2>
-        <a href="tel:123-456-7890" className="tel">
+        <a href="tel:123-456-7890" className="article_tel">
           puh. {tel}
         </a>
       </div>
-      <div className="btn_container">
+      <div className="article_btn_container">
         {/* <em>If you have any questions, call me.</em> */}
         <ul>
           <li

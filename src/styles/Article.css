@@ -1,0 +1,85 @@
+.article {
+  max-width: 345px;
+  justify-content: center;
+  /* border: 1px solid grey; */
+  border-radius: 15px;
+  margin: 20px;
+  padding: 20px;
+
+  box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
+  -webkit-box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
+  -moz-box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
+}
+.article button {
+  border: none;
+}
+.article_img {
+  display: flex;
+  justify-content: center;
+  min-width: 271px;
+  max-width: 95%;
+  height: 192px;
+  margin: auto;
+  object-fit: cover;
+  border: 1px solid inherit;
+  border-radius: 15px;
+}
+.article_figcaption {
+  margin-left: 5%;
+}
+.article_text {
+  min-height: 192px;
+}
+.article_nimi_container {
+  margin: 10px;
+}
+.article_nimi_container,
+.article_btn_container > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-inline-start: 0px;
+}
+.article_nimi {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.article_tel {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: none;
+  color: inherit;
+}
+.article_tel:hover,
+.article_tel:focus {
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.edit_btn:hover,
+.edit_btn:focus {
+  box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
+  -webkit-box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
+  -moz-box-shadow: 10px 10px 42px -8px rgba(0, 0, 0, 0.78);
+  cursor: pointer;
+  color: #fff;
+}
+.edit_btn,
+.edit_btn > button {
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0px;
+  background-color: inherit;
+  border: 1px solid gray;
+  border-radius: 50%;
+}
+.edit_btn.bin > button {
+  margin: 0px -2px;
+}
+.edit_btn.star > button {
+  margin: 0px -2px;
+}
