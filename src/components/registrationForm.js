@@ -27,6 +27,10 @@ const RegistrationForm = () => {
                 password
             })
         }).then((res) => res.json());
+
+        if(result.status !== 'ok') {
+            alert(result.error)
+        }
     }
 
     return (

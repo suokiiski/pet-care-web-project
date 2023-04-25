@@ -103,17 +103,45 @@ app.put('/api/notes/:id', (req, res) => {
 
 //mongoose.connect('mongodb://localhost:3001/user-auth');
 
+//JOS EI TOIMI, TARKISTA ENSIN ETTÄ MUUTTUJILLA ON KAIKIALLA SAMAT NIMET
 app.post('/api/register', async (req, res) => {
-    const {login, password} = req.body;
+    const {login, password: plainTextPassword} = req.body;
 
-    console.log('password', password);
+    if(!login || typeof login !== 'string') {
+        return res.json({status: 'error', error: 'invalid username'});
+    }
+
+    if(!plainTextPassword || typeof plainTextPassword !== 'string') {
+        return res.json({status: 'error', error: 'invalid password'});
+    }
+
+    if(plainTextPassword.length < 8) {
+        return res.json({
+            status: 'error',
+            error: 'The length of the password must be 8 characters at least!'
+        })
+    }
 
     const salt = await bcrypt.genSalt(10);
-    const hash = await bcrypt.hash(password.toString(), salt);
-    console.log('hash', hash);
+    const password = await bcrypt.hash(plainTextPassword.toString(), salt);
+    //console.log('hash', hash);
 
-    console.log(req.body);
+    try{
+        const response = await User.create({
+            login,
+            password
+        })
+        console.log('User created successfully', response);
+    } catch (error) {
+        if(error.code === 11000){
+            return res.json({status: 'error', error: 'username already in use'});
+        }
+        throw error;
+    }
+
     res.json({status: 'ok'});
+    /*console.log(req.body);
+    */
 })
 
 const PORT = process.env.PORT || 3001;
