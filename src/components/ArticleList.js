@@ -2,7 +2,7 @@ import React from "react";
 import Article from "./Article.js";
 
 const ArticleList = ({ items }) => (
-  <div class="main_container">
+  <div className="main_container">
     {items.map(({ src, alt, id, nimi, tel, figcaption, text, cat }) => (
       <Article
         key={id}
