@@ -12,6 +12,8 @@ const bodyParser = require("body-parser");
 //for authentication system
 const User = require('./models/user');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const JWT_SECRET = 'jlbflkjfdghaigahknal$€@kajgbauegnaohgk,fm870!%(/?bkjah';
 
 app.use(express.json());
 app.use(cors());
@@ -101,7 +103,28 @@ app.put('/api/notes/:id', (req, res) => {
 
 //USER AUTHENTICATION STUFF STARTS HERE
 
-//mongoose.connect('mongodb://localhost:3001/user-auth');
+app.post('/api/login', async (req, res) => {
+    const {login, password} = req.body;
+
+    const user = await User.findOne({login}).lean();
+
+    if(!user) {
+        return res.json({status: 'error', error: 'Invalid username/password'});
+    }
+
+    if(await bcrypt.compare(password, user.password)) {
+        const token = jwt.sign({
+            id: user._id,
+            login: user.login
+        },
+        JWT_SECRET
+        );
+
+        return res.json({status: 'ok', data: token});
+    }
+
+    res.json({status: 'error', error: 'Invalid username/password'});
+})
 
 //JOS EI TOIMI, TARKISTA ENSIN ETTÄ MUUTTUJILLA ON KAIKIALLA SAMAT NIMET
 app.post('/api/register', async (req, res) => {

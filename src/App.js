@@ -3,6 +3,7 @@ import Main from "./components/Main";
 import Header from "./components/header";
 import Footer from './components/footer'
 import RegistrationForm from "./components/registrationForm";
+import Login from "./components/login";
 import posterService from './services/posters'
 import logo from './logo.svg';
 //styles
@@ -28,7 +29,10 @@ function App() {
     <div className="App">
         <Header/>
         <Main data={data} />
+        <h3>registration</h3>
         <RegistrationForm />
+        <h3>login</h3>
+        <Login />
       <Footer />
     </div>
   );
