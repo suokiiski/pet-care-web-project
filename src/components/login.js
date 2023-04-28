@@ -29,6 +29,8 @@ const RegistrationForm = () => {
         }).then((res) => res.json());
 
         if(result.status === 'ok') {
+            localStorage.setItem('status', 'loggedIn');
+            localStorage.setItem('login', login);
             console.log('Got the token: ', result.data);
         } else {
             alert(result.error);

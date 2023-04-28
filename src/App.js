@@ -1,4 +1,6 @@
 //components
+import { BrowserRouter as Router, Routes, Route}
+    from 'react-router-dom';
 import Main from "./components/Main";
 import Header from "./components/header";
 import Footer from './components/footer'
@@ -27,10 +29,13 @@ function App() {
     console.log(data);
   return (
     <div className="App">
-        <Header/>
-        <Main data={data} />
-        <h3>registration</h3>
-        <RegistrationForm />
+        <Router>
+            <Header/>
+            <Routes>
+                <Route exact path='/' element={<Main data={data}/>} />
+                <Route path='/sign-in' element={<RegistrationForm />} />
+            </Routes>
+        </Router>
         <h3>login</h3>
         <Login />
       <Footer />

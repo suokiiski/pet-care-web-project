@@ -39,7 +39,7 @@ class AddNewArticle extends Component {
 
     return (
       <form id="new_article" onSubmit={this.handleSubmit}>
-        <label class="label">
+        <label className="label">
           Name
           <input
             type="text"
@@ -49,7 +49,7 @@ class AddNewArticle extends Component {
             onChange={this.handleChange}
           />
         </label>
-        <label class="label">
+        <label className="label">
           Tel
           <input
             type="tel"
@@ -59,7 +59,7 @@ class AddNewArticle extends Component {
             onChange={this.handleChange}
           />
         </label>
-        <label class="label">
+        <label className="label">
           Password
           <input
             type="password"
@@ -80,10 +80,10 @@ class AddNewArticle extends Component {
           name="article"
           form="new_article"
           placeholder="Enter text here..."
-          class="label textarea"
+          className="label textarea"
         ></textarea>
 
-        <label class="label">
+        <label className="label">
           Agree to terms
           <input
             name="agreed"

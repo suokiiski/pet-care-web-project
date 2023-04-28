@@ -28,8 +28,11 @@ const RegistrationForm = () => {
             })
         }).then((res) => res.json());
 
-        if(result.status !== 'ok') {
-            alert(result.error)
+        if(result.status === 'ok') {
+            localStorage.setItem('status', 'loggedIn');
+            localStorage.setItem('login', login);
+        } else {
+            alert(result.error);
         }
     }
 

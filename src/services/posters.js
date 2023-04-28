@@ -5,7 +5,7 @@ const getAll = () => {
     return axios.get(baseUrl)
 }
 
-const create = newObject => {
+const create = (newObject) => {
     return axios.post(baseUrl, newObject)
 }
 

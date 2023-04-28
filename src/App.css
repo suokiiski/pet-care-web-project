@@ -11,7 +11,17 @@ nav {
 
 }
 
-.nav-item a {
+.nav-item a{
+  color: #ffffff;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 10px;
+  border-radius: 20px;
+}
+
+.nav-item div {
   color: #ffffff;
   margin-left: 20px;
   margin-right: 20px;
@@ -19,11 +29,27 @@ nav {
   border-radius: 20px;
 }
 
+.nav-item div:hover{
+  color: #428157;
+  background-color: #ffffff;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 10px;
+  border-radius: 20px;
+}
+
+.dropdown-toggle .nav-link a{
+  padding: 0;
+  margin: 0;
+}
+
 .nav-item a:hover {
   color: #428157;
   background-color: #ffffff;
   margin-left: 20px;
   margin-right: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
   padding-left: 10px;
   border-radius: 20px;
 }

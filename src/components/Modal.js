@@ -32,10 +32,10 @@ class Modal extends PureComponent {
     return createPortal(
       <div
         className={styles.ModalBackdrop}
-        class="ModalBackdrop"
+        className="ModalBackdrop"
         onClick={this.handleBackdropClick}
       >
-        <div className={styles.ModalContent} class="ModalContent">
+        <div className={styles.ModalContent} className="ModalContent">
           {this.props.children}
         </div>
       </div>,
