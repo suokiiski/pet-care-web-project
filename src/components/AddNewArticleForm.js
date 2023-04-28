@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TextField, Input, Button } from "@mui/material";
+import { Input, Button } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import AntSwitch from "./Switch";
 import Typography from "@mui/material/Typography";
@@ -28,6 +28,7 @@ class AddNewArticle extends Component {
   // * new state
   handleChange = ({ target }) => {
     const { name, value, checked, type } = target;
+
     //checked ? checked : value
     this.setState({ [name]: type === "checkbox" ? checked : value });
   };
@@ -35,10 +36,9 @@ class AddNewArticle extends Component {
   // * form submit
   handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log(`Signed up as: ${this.state.name}`);
-    console.log(this.state);
+    // console.log(`Signed up as: ${this.state.name}`);
 
-    // this.props.onSubmit({ ...this.state });
+    this.props.onSubmit({ ...this.state });
     this.props.onClose();
     this.setState({ ...STATE });
     localStorage.setItem("name", this.state.name);
@@ -62,6 +62,7 @@ class AddNewArticle extends Component {
           variant="standard"
           name="name"
           value={name}
+          pattern="[A-Za-z]"
           onChange={this.handleChange}
         />
         <Input
@@ -73,6 +74,7 @@ class AddNewArticle extends Component {
           variant="standard"
           name="tel"
           value={tel}
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           onChange={this.handleChange}
         />
 
@@ -83,6 +85,7 @@ class AddNewArticle extends Component {
           color="success"
           size="small"
           name="img"
+          pattern="https?://.+"
         >
           Upload File
           <input type="file" hidden />
@@ -99,16 +102,27 @@ class AddNewArticle extends Component {
           class="label textarea"
           name="text"
           value={text}
+          onChange={this.handleChange}
         />
 
-        <Stack direction="row" spacing={1} alignItems="center" value={cat}>
-          <Typography>Dog</Typography>
-          <AntSwitch inputProps={{ "aria-label": "ant design" }} />
+        <Stack direction="row" spacing={1} alignItems="center">
+          <Typography name={cat}>Dog</Typography>
+          <AntSwitch
+            inputProps={{ "aria-label": "ant design" }}
+            name="cat"
+            value={cat}
+            onChange={this.handleChange}
+          />
           <Typography>Cat</Typography>
         </Stack>
-        <Stack direction="row" spacing={1} alignItems="center" value={cat}>
+        <Stack direction="row" spacing={1} alignItems="center">
           <Typography>Hoitaja</Typography>
-          <AntSwitch inputProps={{ "aria-label": "ant design" }} />
+          <AntSwitch
+            inputProps={{ "aria-label": "ant design" }}
+            name="omistaja"
+            value={omistaja}
+            onChange={this.handleChange}
+          />
           <Typography>Omistaja</Typography>
         </Stack>
 

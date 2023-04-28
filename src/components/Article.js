@@ -2,7 +2,7 @@
 import "../styles/Main.css";
 import "../styles/Article.css";
 
-const Article = ({ src, alt, nimi, tel, text, figcaption, id, cat }) => {
+const Article = ({ src, alt, nimi, name, tel, text, figcaption, id, cat }) => {
   return (
     <article className="article" id={id}>
       <figure>
@@ -21,8 +21,8 @@ const Article = ({ src, alt, nimi, tel, text, figcaption, id, cat }) => {
       <p className="article_text">{text}</p>
       <div className="article_nimi_container">
         <h2 className="article_nimi">
-          {cat ? "😺" : "🐶"}&nbsp;
-          {nimi}
+          {cat ? "😺" : "🐶"}
+          {nimi} {name}
         </h2>
         <a href="tel:123-456-7890" className="article_tel">
           puh. {tel}
