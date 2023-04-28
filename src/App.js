@@ -1,32 +1,30 @@
 //components
 import Main from "./components/Main";
 import Header from "./components/header";
-import Footer from './components/footer'
-import posterService from './services/posters'
-import logo from './logo.svg';
+import Footer from "./components/footer";
+import posterService from "./services/posters";
 //styles
-import './App.css';
+import "./App.css";
 
-import { useState, useEffect } from 'react';
-
-
+import { useState, useEffect } from "react";
 
 function App() {
-    const[data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
-    useEffect(() => {
-        posterService
-            .getAll()
-            .then(resp => {
-                setData(resp.data);
-            });
-    }, [])
+  useEffect(() => {
+    posterService.getAll().then((resp) => {
+      setData(resp.data);
+    });
+  }, []);
 
-    console.log(data);
+  const render = (newObj) => {
+    console.log(newObj);
+    data = [...newObj, ...data];
+  };
   return (
     <div className="App">
-        <Header/>
-        <Main data={data} />;
+      <Header />
+      <Main data={data} addToRender={render} />;
       <Footer />
     </div>
   );
