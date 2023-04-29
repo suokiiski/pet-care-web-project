@@ -67,6 +67,7 @@ app.post('/api/notes', (req, res) => {
         }); 
     }
 
+  //username lisätty, poista jos ei toimi
   const newNote = new Note({
     src:
       body.src ||
@@ -76,6 +77,7 @@ app.post('/api/notes', (req, res) => {
     tel: body.tel,
     cat: body.cat,
     omistaja: body.omistaja,
+    username: body.username
   });
 
     newNote.save()

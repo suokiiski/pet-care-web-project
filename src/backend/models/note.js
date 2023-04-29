@@ -14,12 +14,15 @@ mongoose.connect(url)
         console.log('error connecting to MongoDB 1:', error.message);
     });
 
+//omistaja ja username lisätty, poista jos ei toimi
 const noteSchema = new mongoose.Schema({
     src: String,
     text: String,
     nimi: String,
     tel: String,
-    cat: Boolean
+    cat: Boolean,
+    omistaja: Boolean,
+    username: String
 });
 
 noteSchema.set('toJSON', {
