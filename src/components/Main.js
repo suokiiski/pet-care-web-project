@@ -5,23 +5,28 @@ import AddNewArticleForm from "./AddNewArticleForm";
 //styles
 import "../styles/Main.css";
 import "../styles/scrollbar.css";
-import posters from "../services/posters";
 import shortid from "shortid";
-import { useState, useEffect } from "react";
+import posterService from "../services/posters";
 
 class Main extends Component {
+  componentDidUpdate(prevProps) {
+    posterService.getAll().then((resp) => {
+      this.setState(({ articles }) => ({
+        articles: resp.data,
+      }));
+    });
+  }
   state = {
     login: false,
     showModal: false,
-    articles: [],
+    articles: this.props.data,
   };
+
   toggleModal = () => {
     this.setState(({ showModal }) => ({ showModal: !showModal }));
   };
 
   addNewArticle = (data) => {
-    console.log(data);
-    const { articles } = this.state;
     const { name, tel, text, cat, img, omistaja } = data;
     const article = {
       id: shortid.generate(),
@@ -29,25 +34,34 @@ class Main extends Component {
       tel,
       text,
       cat,
-      img,
+      src: img,
       omistaja,
     };
-
-    if (this.props.data.some(({ nimi }) => nimi === article.nimi)) {
-      alert(`Sorry, ${name} already exists`);
-      return;
-    }
 
     this.setState(({ articles }) => ({
       articles: [...articles, this.props.data],
     }));
 
-    // console.log(this.state.articles);
-    posters.create(article);
-    // this.state.articles.unshift(article);
+    posterService.create(article);
+  };
+
+  deleteArticle = (articleId) => {
+    if (window.confirm("Do you really want to delete this article?")) {
+      this.setState(() => ({
+        articles: this.props.data.filter((article) => article.id !== articleId),
+      }));
+
+      posterService.remove(articleId);
+    } else {
+      return;
+    }
+
+    // posters.deleteById(articleId);
+    // console.log(article);
   };
   render() {
-    const { showModal } = this.state;
+    const { showModal, articles } = this.state;
+
     // console.log(posters);
     return (
       <div className="main_container">
@@ -66,7 +80,10 @@ class Main extends Component {
         <button className="add-new-article-btn" onClick={this.toggleModal}>
           AddNewArticle
         </button>
-        <ArticleList items={this.props.data} />
+        <ArticleList
+          items={this.state.articles}
+          deleteArticle={this.deleteArticle}
+        />
       </div>
     );
   }

@@ -17,14 +17,10 @@ function App() {
     });
   }, []);
 
-  const render = (newObj) => {
-    console.log(newObj);
-    data = [...newObj, ...data];
-  };
   return (
     <div className="App">
       <Header />
-      <Main data={data} addToRender={render} />;
+      <Main data={data} />;
       <Footer />
     </div>
   );
