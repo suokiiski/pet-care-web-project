@@ -37,11 +37,12 @@ const Header = () => {
                                 <a className="nav-link" href="">Vinkit</a>
                             </li>
                             <li className="nav-item">
-                                <NavDropdown className='nav-link' title={localStorage.getItem('login')}>
+                                <a className='nav-link' onClick={handleLogOut} href="">Kirjaudu Ulos</a>
+                                {/*<NavDropdown className='nav-link' title={localStorage.getItem('login')}>
                                     <NavDropdown.Item >Uusi ilmoitus</NavDropdown.Item>
                                     <NavDropdown.Item onClick={handleLogOut}>Kirjaudu ulos</NavDropdown.Item>
                                 </NavDropdown>
-                                {/*<a className="nav-link"><img
+                                <a className="nav-link"><img
                                     style={
                                         {height: 30,
                                         width: 30}
@@ -83,7 +84,7 @@ const Header = () => {
                             <a className="nav-link" href="">Vinkit</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/sign-in">Rekisteröidy</a>
+                            <a className="nav-link" href="/sign-in">Kirjaudu sisään</a>
                         </li>
                     </ul>
                 </div>

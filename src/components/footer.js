@@ -32,7 +32,7 @@ const Footer = () => {
                             <li className='liFooter'>
                                 Helsinki, Myllypuro
                             </li>
-                            <li className='liFooter'>+358 666 13 13</li>
+                            <li className='liFooter'>040 666 13 13</li>
                             <li className='liFooter'>feedback@petnanny.com</li>
                         </ul>
                     </div>

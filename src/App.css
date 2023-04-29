@@ -62,3 +62,24 @@ nav {
   border-color: #ffffff;
 }
 
+.sign-in-form {
+  width: 30%;
+  margin: auto;
+}
+
+button .btn .btn-primary .btn-block .mb-4 {
+  width: 30%;
+  margin: auto;
+}
+
+.loginBtn {
+  margin: auto;
+
+  background-color: #428157 !important;
+}
+
+.sign-in-h1 {
+  margin: 20px;
+  margin-top: 40px;
+}
+

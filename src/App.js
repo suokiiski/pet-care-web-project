@@ -26,9 +26,10 @@ function App() {
             });
     }, [])
 
+    //MUUTETTU, CTRL+Z TARVITTAESSA
   const render = (newObj) => {
     console.log(newObj);
-    data = [...newObj, ...data];
+    setData([...newObj, ...data]);
   };
   return (
     <div className="App">
@@ -36,10 +37,9 @@ function App() {
           <Header />
           <Routes>
             <Route exact path='/' element={<Main data={data} addToRender={render} />} />>;
-              <Route path='/sign-in' element={<RegistrationForm />} />
+              <Route path='/sign-in' element={<Login />} />
           </Routes>
       </Router>
-        <Login />
         <Footer />
     </div>
   );

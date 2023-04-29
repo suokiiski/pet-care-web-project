@@ -70,7 +70,7 @@ app.post('/api/notes', (req, res) => {
   const newNote = new Note({
     src:
       body.src ||
-      "https://img.freepik.com/free-vector/american-bobtail-cat-doodle-element-vector_53876-151536.jpg?w=740&t=st=1682273176~exp=1682273776~hmac=f964e2113497f3eeebd7a7b41cac535694a2817622d6cfdf688765aaf9a1691e",
+      "https://img.freepik.com/free-vector/paw-prints-trail-across-screen_78370-866.jpg?w=1060&t=st=1682770876~exp=1682771476~hmac=eddb53ae3d0853790bc316ea2f99c7d78c70d9b5013f940a8a8150c8465f520a",
     text: body.text,
     nimi: body.nimi,
     tel: body.tel,
@@ -88,7 +88,7 @@ app.put('/api/notes/:id', (req, res) => {
     const body = req.body;
 
     const newNote = {
-        src: body.src || 'https://img.freepik.com/free-vector/american-bobtail-cat-doodle-element-vector_53876-151536.jpg?w=740&t=st=1682273176~exp=1682273776~hmac=f964e2113497f3eeebd7a7b41cac535694a2817622d6cfdf688765aaf9a1691e',
+        src: body.src || 'https://img.freepik.com/free-vector/paw-prints-trail-across-screen_78370-866.jpg?w=1060&t=st=1682770876~exp=1682771476~hmac=eddb53ae3d0853790bc316ea2f99c7d78c70d9b5013f940a8a8150c8465f520a',
         text: body.text,
         nimi: body.nimi,
         tel: body.tel,
