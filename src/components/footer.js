@@ -1,6 +1,9 @@
 import React from 'react';
 import { SocialIcon } from 'react-social-icons';
-//import { MDBIcon } from 'mdb-react-ui-kit';
+import { Icon } from 'react-icons-kit'
+import {phone} from 'react-icons-kit/icomoon/phone'
+import {mail} from 'react-icons-kit/icomoon/mail'
+import {home} from 'react-icons-kit/icomoon/home'
 
 const Footer = () => {
 
@@ -30,10 +33,10 @@ const Footer = () => {
                         <h6 className='h6Footer'>Contact us</h6>
                         <ul className='ulFooter'>
                             <li className='liFooter'>
-                                Helsinki, Myllypuro
+                                <Icon icon={home} /> Helsinki, Myllypuro
                             </li>
-                            <li className='liFooter'>040 666 13 13</li>
-                            <li className='liFooter'>feedback@petnanny.com</li>
+                            <li className='liFooter'><Icon icon={phone}/> 040 666 13 13</li>
+                            <li className='liFooter'><Icon icon={mail} /> feedback@petnanny.com</li>
                         </ul>
                     </div>
 
