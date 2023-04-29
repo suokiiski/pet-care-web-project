@@ -19,10 +19,11 @@ class Main extends Component {
     this.setState(({ showModal }) => ({ showModal: !showModal }));
   };
 
+  //poista username jos ei toimi
   addNewArticle = (data) => {
     console.log(data);
     const { articles } = this.state;
-    const { name, tel, text, cat, img, omistaja } = data;
+    const { name, tel, text, cat, img, omistaja, username } = data;
     const article = {
       id: shortid.generate(),
       nimi: name,
@@ -31,6 +32,7 @@ class Main extends Component {
       cat,
       img,
       omistaja,
+      username
     };
 
     if (this.props.data.some(({ nimi }) => nimi === article.nimi)) {
