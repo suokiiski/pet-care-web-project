@@ -35,6 +35,7 @@ const RegistrationForm = () => {
             localStorage.setItem('status', 'loggedIn');
             localStorage.setItem('login', login);
             console.log('Got the token: ', result.data);
+            alert('Tervetuloa '+ login + '!');
         } else {
             alert(result.error);
         }
@@ -43,9 +44,12 @@ const RegistrationForm = () => {
     return (
 
         <form className='sign-in-form' onSubmit={loginUser}>
-            <h1 className='text-center sign-in-h1'>Kirjaudu sisään</h1>
+            <div className='text-center'>
+            <h1 className='sign-in-h1'>Kirjaudu sisään</h1>
+            <img className='sign-in-img' src='./images/logo_kuva.png'/>
+            </div>
             <div className="form-outline mb-4">
-                <input type="email" id="form2Example1" className="form-control" value={login} onChange={handleLoginChange}/>
+                <input id="form2Example1" className="form-control" value={login} onChange={handleLoginChange}/>
                 <label className="form-label" htmlFor="form2Example1">Käyttäjätunnus</label>
             </div>
 

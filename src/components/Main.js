@@ -46,9 +46,29 @@ class Main extends Component {
     posters.create(article);
     // this.state.articles.unshift(article);
   };
+
   render() {
     const { showModal } = this.state;
     // console.log(posters);
+    if(localStorage.getItem('status') === null) {
+      return (
+          <div className="main_container">
+            {showModal && (
+                <Modal onClose={this.toggleModal}>
+                  <button onClick={this.toggleModal} className="close-btn">
+                    X
+                  </button>
+                  <AddNewArticleForm
+                      onClose={this.toggleModal}
+                      onSubmit={this.addNewArticle}
+                  />
+                </Modal>
+            )}
+            <ArticleList items={this.props.data} />
+          </div>
+      )
+    }
+
     return (
       <div className="main_container">
         {showModal && (
