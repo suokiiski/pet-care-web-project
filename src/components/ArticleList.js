@@ -3,7 +3,7 @@ import Article from "./Article.js";
 
 const ArticleList = ({ items }) => (
   <div className="main_container">
-    {items.map(({ src, alt, id, nimi, tel, figcaption, text, cat }) => (
+    {items.map(({ src, alt, id, name, tel, figcaption, text, cat, nimi }) => (
       <Article
         key={id}
         src={src}

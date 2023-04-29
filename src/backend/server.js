@@ -67,13 +67,16 @@ app.post('/api/notes', (req, res) => {
         }); 
     }
 
-    const newNote = new Note ({
-        src: body.src || 'https://img.freepik.com/free-vector/american-bobtail-cat-doodle-element-vector_53876-151536.jpg?w=740&t=st=1682273176~exp=1682273776~hmac=f964e2113497f3eeebd7a7b41cac535694a2817622d6cfdf688765aaf9a1691e',
-        text: body.text,
-        nimi: body.nimi,
-        tel: body.tel,
-        cat: body.cat
-    });
+  const newNote = new Note({
+    src:
+      body.src ||
+      "https://img.freepik.com/free-vector/american-bobtail-cat-doodle-element-vector_53876-151536.jpg?w=740&t=st=1682273176~exp=1682273776~hmac=f964e2113497f3eeebd7a7b41cac535694a2817622d6cfdf688765aaf9a1691e",
+    text: body.text,
+    nimi: body.nimi,
+    tel: body.tel,
+    cat: body.cat,
+    omistaja: body.omistaja,
+  });
 
     newNote.save()
         .then(savedNote => {

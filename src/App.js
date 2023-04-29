@@ -21,24 +21,26 @@ function App() {
     useEffect(() => {
         posterService
             .getAll()
-            .then(resp => {
+            .then((resp) => {
                 setData(resp.data);
             });
     }, [])
 
-    console.log(data);
+  const render = (newObj) => {
+    console.log(newObj);
+    data = [...newObj, ...data];
+  };
   return (
     <div className="App">
-        <Router>
-            <Header/>
-            <Routes>
-                <Route exact path='/' element={<Main data={data}/>} />
-                <Route path='/sign-in' element={<RegistrationForm />} />
-            </Routes>
-        </Router>
-        <h3>login</h3>
+      <Router>
+          <Header />
+          <Routes>
+            <Route exact path='/' element={<Main data={data} addToRender={render} />} />>;
+              <Route path='/sign-in' element={<RegistrationForm />} />
+          </Routes>
+      </Router>
         <Login />
-      <Footer />
+        <Footer />
     </div>
   );
 }
