@@ -10,7 +10,9 @@ import SendIcon from "@mui/icons-material/Send";
 import "../styles/Modal.css";
 import "../styles/AddNewArticle.css";
 
+//username lisätty, poista jos ei toimi
 const STATE = {
+
   name: "",
   tel: "",
   text: "",
@@ -18,6 +20,7 @@ const STATE = {
   cat: false,
   img: "",
   omistaja: false,
+  username: localStorage.getItem('login')
 };
 
 class AddNewArticle extends Component {

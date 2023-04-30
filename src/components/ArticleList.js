@@ -3,7 +3,8 @@ import Article from "./Article.js";
 
 const ArticleList = ({ items, deleteArticle }) => (
   <div className="main_container">
-    {items.map(({ src, alt, id, tel, figcaption, text, cat, nimi }) => (
+    {items.map(({ src, alt, id, name, tel, figcaption, text, cat, nimi, username }) => (
+
       <Article
         key={id}
         id={id}
@@ -15,6 +16,7 @@ const ArticleList = ({ items, deleteArticle }) => (
         tel={tel}
         cat={cat}
         deleteArticle={deleteArticle}
+        username={username}
       />
     ))}
   </div>
