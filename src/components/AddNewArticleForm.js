@@ -10,7 +10,9 @@ import SendIcon from "@mui/icons-material/Send";
 import "../styles/Modal.css";
 import "../styles/AddNewArticle.css";
 
+//username lisätty, poista jos ei toimi
 const STATE = {
+
   name: "",
   tel: "",
   text: "",
@@ -18,6 +20,7 @@ const STATE = {
   cat: false,
   img: "",
   omistaja: false,
+  username: localStorage.getItem('login')
 };
 
 class AddNewArticle extends Component {
@@ -36,7 +39,6 @@ class AddNewArticle extends Component {
   // * form submit
   handleSubmit = (evt) => {
     evt.preventDefault();
-    // console.log(`Signed up as: ${this.state.name}`);
 
     this.props.onSubmit({ ...this.state });
     this.props.onClose();
@@ -78,18 +80,17 @@ class AddNewArticle extends Component {
           onChange={this.handleChange}
         />
 
-        <Button
-          component="label"
-          className="add_new_img"
-          variant="contained"
-          color="success"
-          size="small"
+        <Input
+          fullWidth
+          required
+          id="outlined-required"
+          label="Please input your pet img"
+          placeholder="Please input your pet image address"
+          variant="standard"
           name="img"
-          pattern="https?://.+"
-        >
-          Upload File
-          <input type="file" hidden />
-        </Button>
+          value={img}
+          onChange={this.handleChange}
+        />
 
         <Input
           type="text"
