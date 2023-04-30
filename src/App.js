@@ -26,11 +26,12 @@ function App() {
             });
     }, [])
 
-    //MUUTETTU, CTRL+Z TARVITTAESSA
+
   const render = (newObj) => {
     console.log(newObj);
     setData([...newObj, ...data]);
   };
+  
   return (
     <div className="App">
       <Router>

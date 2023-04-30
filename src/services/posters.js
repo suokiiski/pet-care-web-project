@@ -17,9 +17,15 @@ const remove = (id) => {
     return axios.delete(`${baseUrl}/${id}`)
 }
 
+const remove = (id) => {
+  return axios.delete(`${baseUrl}/${id}`);
+};
+
+
 export default {
-    getAll: getAll,
-    create: create,
-    update: update,
-    remove: remove
+    getAll,
+    create,
+    update,
+    remove
 }
+

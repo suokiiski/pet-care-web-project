@@ -1,12 +1,13 @@
 import React from "react";
 import Article from "./Article.js";
 
-//ja taas, jos ei toimi on syytä poistaa username
-const ArticleList = ({ items }) => (
+const ArticleList = ({ items, deleteArticle }) => (
   <div className="main_container">
     {items.map(({ src, alt, id, name, tel, figcaption, text, cat, nimi, username }) => (
+
       <Article
         key={id}
+        id={id}
         src={src}
         alt={alt}
         figcaption={figcaption}
@@ -14,6 +15,7 @@ const ArticleList = ({ items }) => (
         nimi={nimi}
         tel={tel}
         cat={cat}
+        deleteArticle={deleteArticle}
         username={username}
       />
     ))}
