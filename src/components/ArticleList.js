@@ -23,7 +23,7 @@ const ArticleList = ({
           deleteArticle={deleteArticle}
           handleOpen={handleOpen}
           saveOnFavoutires={saveOnFavoutires}
-          // username={username}
+          username={username}
         />
       )
     )}

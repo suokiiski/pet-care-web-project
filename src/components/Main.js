@@ -152,6 +152,33 @@ class Main extends Component {
 
   render() {
     const { showModal, editModalOpen } = this.state;
+
+    if(localStorage.getItem('status') === null) {
+      return (
+          <div className="main_container">
+            {showModal && (
+                <Modal onClose={this.toggleModal}>
+                  <button onClick={this.toggleModal} className="close-btn">
+                    X
+                  </button>
+                  <AddNewArticleForm
+                      onClose={this.toggleModal}
+                      onSubmit={this.addNewArticle}
+                  />
+                </Modal>
+            )}
+            <ArticleList items={this.props.data} />
+            <span
+                className="up-button animate__animated"
+                id="myBtn"
+                rel="noopener noreferrer"
+                onClick={onScrollToTop}
+            >
+          &#11165;
+        </span>
+          </div>
+      )
+    }
     return (
       <div className="main_container">
         {showModal && (
