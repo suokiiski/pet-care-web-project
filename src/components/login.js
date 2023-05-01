@@ -38,7 +38,6 @@ const RegistrationForm = () => {
         if(result.status === 'ok') {
             localStorage.setItem('status', 'loggedIn');
             localStorage.setItem('login', login);
-            console.log('Got the token: ', result.data);
             alert('Tervetuloa '+ login + '!');
         } else {
             alert(result.error);

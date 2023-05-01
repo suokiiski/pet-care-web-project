@@ -33,6 +33,7 @@ const RegistrationForm = () => {
         if(result.status === 'ok') {
             localStorage.setItem('status', 'loggedIn');
             localStorage.setItem('login', login);
+            alert('Tervetuloa '+ login + '!');
         } else {
             alert(result.error);
         }
