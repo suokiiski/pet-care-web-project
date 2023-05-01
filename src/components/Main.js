@@ -49,6 +49,7 @@ class Main extends Component {
   };
 
   deleteArticle = (articleId) => {
+    console.log(articleId);
     if (window.confirm("Do you really want to delete this article?")) {
       this.setState(() => ({
         articles: this.props.data.filter((article) => article.id !== articleId),

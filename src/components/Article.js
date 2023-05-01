@@ -14,7 +14,47 @@ const Article = ({
   omistaja,
   cat,
   deleteArticle,
+  username
 }) => {
+
+  //älkää poistako ifiä, se vaikuttaa siihen kuka pystyy muokkaamaan ja poistamaan ilmoituksia
+  if(username !== localStorage.getItem('login')) {
+    return(
+        <article className="article" id={id}>
+          <figure>
+            <img
+                src={
+                  src
+                      ? src
+                      : "https://previews.123rf.com/images/yuliaglam/yuliaglam1202/yuliaglam120200313/12670415-dog-cat-icon.jpg"
+                }
+                className="article_img"
+                alt={alt}
+            />
+            <figcaption className="article_figcaption">{figcaption}</figcaption>
+          </figure>
+
+          <p className="article_text">{text}</p>
+          <div className="article_nimi_container">
+            <h2 className="article_nimi">
+              {cat ? "😺" : "🐶"}
+              {nimi} {name}
+            </h2>
+            <a href="tel:123-456-7890" className="article_tel">
+              puh. {tel}
+            </a>
+          </div>
+          <div className="article_btn_container">
+            <em>If you have any questions, call me.</em>
+            <ul>
+              <li className="edit_btn star" title="save for the future">
+                <button>⭐</button>
+              </li>
+            </ul>
+          </div>
+        </article>
+    )
+  }
 
   return (
     <article className="article" id={id}>

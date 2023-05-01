@@ -17,10 +17,6 @@ const remove = (id) => {
     return axios.delete(`${baseUrl}/${id}`)
 }
 
-const remove = (id) => {
-  return axios.delete(`${baseUrl}/${id}`);
-};
-
 
 export default {
     getAll,
