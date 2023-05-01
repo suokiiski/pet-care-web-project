@@ -14,7 +14,6 @@ import './App.css';
 import { useState, useEffect } from 'react';
 
 
-
 function App() {
     const[data, setData] = useState([]);
 
@@ -26,11 +25,11 @@ function App() {
             });
     }, [])
 
-    //MUUTETTU, CTRL+Z TARVITTAESSA
   const render = (newObj) => {
     console.log(newObj);
     setData([...newObj, ...data]);
   };
+
   return (
     <div className="App">
       <Router>
@@ -38,6 +37,7 @@ function App() {
           <Routes>
             <Route exact path='/' element={<Main data={data} addToRender={render} />} />>;
               <Route path='/sign-in' element={<Login />} />
+              <Route path='/registration' element={<RegistrationForm />} />
           </Routes>
       </Router>
         <Footer />

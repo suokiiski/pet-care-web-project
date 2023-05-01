@@ -35,11 +35,6 @@ class Main extends Component {
       username
     };
 
-    if (this.props.data.some(({ nimi }) => nimi === article.nimi)) {
-      alert(`Sorry, ${name} already exists`);
-      return;
-    }
-
     this.setState(({ articles }) => ({
       articles: [...articles, this.props.data],
     }));

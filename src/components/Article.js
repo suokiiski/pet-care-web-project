@@ -60,7 +60,7 @@ const Article = ({ src, alt, nimi, name, tel, text, figcaption, id, cat, usernam
         </a>
       </div>
       <div className="article_btn_container">
-        {/* <em>If you have any questions, call me.</em> */}
+        <em>If you have any questions, call me.</em>
         <ul>
           <li
             className="edit_btn edit"
