@@ -4,6 +4,8 @@ import {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import '../App.css'
 
+const debounce = require("lodash.debounce");
+
 const RegistrationForm = () => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
@@ -41,6 +43,16 @@ const RegistrationForm = () => {
         }
     }
 
+    function onScrollToTop() {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        });
+    }
+
+
+
     return (
 
         <form className='sign-in-form' onSubmit={loginUser}>
@@ -65,6 +77,14 @@ const RegistrationForm = () => {
             <div className='text-center'>
                 <p>Jos sinulla ei ole vielä tiliä <br/> <a href="#!">Rekisteröidy</a></p>
             </div>
+            <span
+                className="up-button animate__animated"
+                id="myBtn"
+                rel="noopener noreferrer"
+                onClick={onScrollToTop}
+            >
+          &#11165;
+        </span>
         </form>
         /*<section>
             <form className='mx-1 mx-md-4' onSubmit={loginUser}>
@@ -86,6 +106,7 @@ const RegistrationForm = () => {
                 <button type='submit'>Register</button>
             </form>
         </section>*/
+
     )
 }
 

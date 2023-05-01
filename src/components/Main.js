@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import ArticleList from "./ArticleList";
 import Modal from "./Modal";
 import AddNewArticleForm from "./AddNewArticleForm";
-import { ToastContainer, toast } from "react-toastify";
 
 //styles
 import "../styles/Main.css";
@@ -168,7 +167,7 @@ class Main extends Component {
         )}
 
         <button className="add-new-article-btn" onClick={this.toggleModal}>
-          AddNewArticle
+          Uusi ilmoitus
         </button>
         <ArticleList
           items={this.state.articles}
