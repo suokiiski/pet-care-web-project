@@ -1,7 +1,8 @@
 import React from "react";
 import {useState} from "react";
+
 import 'bootstrap/dist/css/bootstrap.css';
-import '../App.css'
+import '../App.css';
 
 const RegistrationForm = () => {
     const [login, setLogin] = useState('');
