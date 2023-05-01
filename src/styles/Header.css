@@ -23,20 +23,26 @@ nav {
     background-color: #428157FF;
 }
 
-.nav-item a {
+
+
+.nav-link {
     background-color: #428157FF;
     color: #ffffff;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-left: 10px;
+    font-size: 23px;
+    border: none;
     border-radius: 20px;
+    margin: 5px 9px;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
 }
 
-.nav-item a:hover {
+.nav-link:hover {
     color: #428157;
     background-color: #ffffff;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-left: 10px;
+    margin: 5px 9px;
+    padding: 15px 30px;
+    text-align: center;
+    border: none;
     border-radius: 20px;
 }

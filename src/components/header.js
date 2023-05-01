@@ -1,7 +1,8 @@
 import React, { useRef, useLayoutEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import '../styles/Header.css'
 
-const Header = () => {
+const Header = ({onMainButtonClick, onPeopleButtonClick, onPetsButtonClick }) => {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark">
@@ -17,26 +18,25 @@ const Header = () => {
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Home</a>
+                            <button className="nav-link" onClick={onMainButtonClick} >Home</button>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Hoidettavat</a>
+                            <button className="nav-link" onClick={onPetsButtonClick}>Lemmikit</button>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="">Hoitajat</a>
+                            <button className="nav-link" onClick={onPeopleButtonClick}>Hoitajat</button>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="">Vinkit</a>
+                            <button className="nav-link">Vinkit</button>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="">Rekisteröidy</a>
+                            <button className="nav-link">Rekisteröidy</button>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     )
-
 }
 
 export default Header;

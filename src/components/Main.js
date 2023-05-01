@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ArticleList from "./ArticleList";
 import Modal from "./Modal";
 import AddNewArticleForm from "./AddNewArticleForm";
+import HeroSection from "./Hero";
 //styles
 import "../styles/Main.css";
 import "../styles/scrollbar.css";
@@ -65,11 +66,16 @@ class Main extends Component {
 
   render() {
     const { showModal } = this.state;
+    const { onPeopleButtonClick, onPetsButtonClick } = this.props;
+
 
     // console.log(posters);
     if(localStorage.getItem('status') === null) {
       return (
           <div className="main_container">
+            <HeroSection
+                onPeopleButtonClick={onPeopleButtonClick}
+                onPetsButtonClick={onPetsButtonClick} />
             {showModal && (
                 <Modal onClose={this.toggleModal}>
                   <button onClick={this.toggleModal} className="close-btn">
@@ -88,6 +94,9 @@ class Main extends Component {
 
     return (
       <div className="main_container">
+        <HeroSection
+            onPeopleButtonClick={onPeopleButtonClick}
+            onPetsButtonClick={onPetsButtonClick} />
         {showModal && (
           <Modal onClose={this.toggleModal}>
             <button onClick={this.toggleModal} className="close-btn">
