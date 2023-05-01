@@ -45,7 +45,7 @@ function onScrollToBottom() {
 }
 
 class Main extends Component {
-  componentDidUpdate(prevProps) {
+  componentDidUpdate() {
     posterService.getAll().then((resp) => {
       this.setState(() => ({
         articles: resp.data,
@@ -61,13 +61,18 @@ class Main extends Component {
     favourites: [],
   };
 
-  toggleModal = () => {
-    this.setState(({ editModalOpen }) => ({
-      showModal: !editModalOpen,
+  closeModal = () => {
+    this.setState(() => ({
+      showModal: false,
+      editModalOpen: false,
+    }));
+  };
+  openModal = () => {
+    this.setState(() => ({
+      showModal: true,
     }));
   };
 
-  //poista username jos ei toimi
   addNewArticle = (data) => {
     const { name, tel, text, cat, img, omistaja, username } = data;
     const article = {
@@ -157,15 +162,15 @@ class Main extends Component {
       return (
           <div className="main_container">
             {showModal && (
-                <Modal onClose={this.toggleModal}>
-                  <button onClick={this.toggleModal} className="close-btn">
-                    X
-                  </button>
-                  <AddNewArticleForm
-                      onClose={this.toggleModal}
-                      onSubmit={this.addNewArticle}
-                  />
-                </Modal>
+              <Modal onClose={this.closeModal}>
+                <button onClick={this.closeModal} className="close-btn">
+                  X
+                </button>
+                <AddNewArticleForm
+                  onClose={this.closeModal}
+                  onSubmit={this.addNewArticle}
+                />
+              </Modal>
             )}
             <ArticleList items={this.props.data} />
             <span
@@ -182,12 +187,12 @@ class Main extends Component {
     return (
       <div className="main_container">
         {showModal && (
-          <Modal onClose={this.toggleModal}>
-            <button onClick={this.toggleModal} className="close-btn">
+          <Modal onClose={this.closeModal}>
+            <button onClick={this.closeModal} className="close-btn">
               X
             </button>
             <AddNewArticleForm
-              onClose={this.toggleModal}
+              onClose={this.closeModal}
               onSubmit={this.addNewArticle}
             />
           </Modal>
@@ -203,12 +208,12 @@ class Main extends Component {
           saveOnFavoutires={this.saveOnFavoutires}
         />
         {editModalOpen && (
-          <Modal onClose={this.toggleModal}>
-            <button onClick={this.toggleModal} className="close-btn">
+          <Modal onClose={this.closeModal}>
+            <button onClick={this.closeModal} className="close-btn">
               X
             </button>
             <AddNewArticleForm
-              onClose={this.toggleModal}
+              onClose={this.closeModal}
               onSubmit={this.editArticle}
             />
           </Modal>
