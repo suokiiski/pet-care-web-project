@@ -14,7 +14,9 @@ const Article = ({
   omistaja,
   cat,
   deleteArticle,
-  username
+   username,
+  handleOpen,
+  saveOnFavoutires,
 }) => {
 
   //älkää poistako ifiä, se vaikuttaa siihen kuka pystyy muokkaamaan ja poistamaan ilmoituksia
@@ -55,7 +57,7 @@ const Article = ({
         </article>
     )
   }
-
+  
   return (
     <article className="article" id={id}>
       <figure>
@@ -88,7 +90,7 @@ const Article = ({
             className="edit_btn edit"
             title="you can edit article (opening modal window)"
           >
-            <button>&#9998;</button>
+            <button onClick={() => handleOpen(id)}>&#9998;</button>
           </li>
           <li className="edit_btn bin" title="delete the whole article">
             <button name="delete" onClick={() => deleteArticle(id)}>
@@ -96,7 +98,7 @@ const Article = ({
             </button>
           </li>
           <li className="edit_btn star" title="save for the future">
-            <button>⭐</button>
+            <button onClick={() => saveOnFavoutires(id)}>⭐</button>
           </li>
         </ul>
       </div>
