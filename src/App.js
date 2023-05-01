@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Main from "./components/Main";
 import Header from "./components/header";
 import Footer from "./components/footer";
-// import RegistrationForm from "./components/registrationForm";
+import RegistrationForm from "./components/registrationForm";
 import Login from "./components/login";
 import posterService from "./services/posters";
 //styles
@@ -36,6 +36,7 @@ function App() {
             element={<Main data={data} addToRender={render} />}
           />
           <Route path="/sign-in" element={<Login />} />
+          <Route path='/registration' element={<RegistrationForm />} />
         </Routes>
       </Router>
       <Footer />

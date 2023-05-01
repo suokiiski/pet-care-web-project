@@ -1,10 +1,12 @@
 import React from "react";
 import {useState} from "react";
+import { BrowserRouter as Router, Routes, Route}
+    from 'react-router-dom';
+import RegistrationPage from './registrationForm';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import '../App.css'
 
-const debounce = require("lodash.debounce");
 
 const RegistrationForm = () => {
     const [login, setLogin] = useState('');
@@ -75,7 +77,7 @@ const RegistrationForm = () => {
             </div>
 
             <div className='text-center'>
-                <p>Jos sinulla ei ole vielä tiliä <br/> <a href="#!">Rekisteröidy</a></p>
+                <p>Jos sinulla ei ole vielä tiliä <br/> <a href="/registration">Rekisteröidy</a></p>
             </div>
             <span
                 className="up-button animate__animated"
