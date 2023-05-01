@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { createPortal } from "react-dom";
-import styles from "../styles/Modal.css";
+import "../styles/Modal.css";
 
 const modalRoot = document.querySelector("#modal-root");
 
@@ -26,14 +26,8 @@ class Modal extends PureComponent {
 
   render() {
     return createPortal(
-      <div
-        className={styles.ModalBackdrop}
-        className="ModalBackdrop"
-        onClick={this.handleBackdropClick}
-      >
-        <div className={styles.ModalContent} className="ModalContent">
-          {this.props.children}
-        </div>
+      <div className="ModalBackdrop" onClick={this.handleBackdropClick}>
+        <div className="ModalContent">{this.props.children}</div>
       </div>,
       modalRoot
     );
