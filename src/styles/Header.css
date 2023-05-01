@@ -1,0 +1,48 @@
+nav {
+    background-color: #428157FF;
+    color: #ffffff;
+    font-size: 23px;
+}
+
+.container-fluid img {
+    height: 75px;
+    margin-right: 10px;
+    background-color: #428157FF;
+}
+
+.navbar {
+--bs-navbar-color: #428157FF;
+}
+
+.collapse {
+    background-color: #428157FF;
+}
+
+.custom-toggler .navbar-toggler {
+    border-color: #ffffff;
+    background-color: #428157FF;
+}
+
+
+
+.nav-link {
+    background-color: #428157FF;
+    color: #ffffff;
+    font-size: 23px;
+    border: none;
+    border-radius: 20px;
+    margin: 5px 9px;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #428157;
+    background-color: #ffffff;
+    margin: 5px 9px;
+    padding: 15px 30px;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+}
