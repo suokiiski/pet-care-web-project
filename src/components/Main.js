@@ -18,8 +18,8 @@ window.onscroll = debounce(scrollFunction, 250);
 function scrollFunction() {
   const myButton = document.getElementById("myBtn");
   if (
-      document.body.scrollTop > 100 ||
-      document.documentElement.scrollTop > 100
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
   ) {
     myButton.style.display = "block";
     myButton.classList.add("animate__bounceInDown");
@@ -46,7 +46,7 @@ function onScrollToBottom() {
 }
 
 class Main extends Component {
-  componentDidUpdate(prevProps) {
+  componentDidUpdate() {
     posterService.getAll().then((resp) => {
       this.setState(() => ({
         articles: resp.data,
@@ -62,9 +62,15 @@ class Main extends Component {
     favourites: [],
   };
 
-  toggleModal = () => {
-    this.setState(({ editModalOpen }) => ({
-      showModal: !editModalOpen,
+  closeModal = () => {
+    this.setState(() => ({
+      showModal: false,
+      editModalOpen: false,
+    }));
+  };
+  openModal = () => {
+    this.setState(() => ({
+      showModal: true,
     }));
   };
 
@@ -162,12 +168,12 @@ class Main extends Component {
                 onPeopleButtonClick={onPeopleButtonClick}
                 onPetsButtonClick={onPetsButtonClick} />
             {showModal && (
-                <Modal onClose={this.toggleModal}>
-                  <button onClick={this.toggleModal} className="close-btn">
+                <Modal onClose={this.closeModal}>
+                  <button onClick={this.closeModal} className="close-btn">
                     X
                   </button>
                   <AddNewArticleForm
-                      onClose={this.toggleModal}
+                      onClose={this.closeModal}
                       onSubmit={this.addNewArticle}
                   />
                 </Modal>
@@ -190,47 +196,47 @@ class Main extends Component {
               onPeopleButtonClick={onPeopleButtonClick}
               onPetsButtonClick={onPetsButtonClick} />
           {showModal && (
-              <Modal onClose={this.toggleModal}>
-                <button onClick={this.toggleModal} className="close-btn">
+              <Modal onClose={this.closeModal}>
+                <button onClick={this.closeModal} className="close-btn">
                   X
                 </button>
                 <AddNewArticleForm
-                    onClose={this.toggleModal}
+                    onClose={this.closeModal}
                     onSubmit={this.addNewArticle}
                 />
               </Modal>
           )}
 
-          <button className="add-new-article-btn heroB" onClick={this.toggleModal}>
-            Uusi ilmoitus
-          </button>
-          <ArticleList
-              items={this.state.articles}
-              deleteArticle={this.deleteArticle}
-              handleOpen={this.handleOpenEditModal}
-              saveOnFavoutires={this.saveOnFavoutires}
-          />
-          {editModalOpen && (
-              <Modal onClose={this.toggleModal}>
-                <button onClick={this.toggleModal} className="close-btn">
-                  X
-                </button>
-                <AddNewArticleForm
-                    onClose={this.toggleModal}
-                    onSubmit={this.editArticle}
-                />
-              </Modal>
-          )}
+        <button className="add-new-article-btn heroB" onClick={this.toggleModal}>
+          Uusi ilmoitus
+        </button>
+        <ArticleList
+          items={this.state.articles}
+          deleteArticle={this.deleteArticle}
+          handleOpen={this.handleOpenEditModal}
+          saveOnFavoutires={this.saveOnFavoutires}
+        />
+        {editModalOpen && (
+          <Modal onClose={this.closeModal}>
+            <button onClick={this.closeModal} className="close-btn">
+              X
+            </button>
+            <AddNewArticleForm
+              onClose={this.closeModal}
+              onSubmit={this.editArticle}
+            />
+          </Modal>
+        )}
 
-          <span
-              class="up-button animate__animated"
-              id="myBtn"
-              rel="noopener noreferrer"
-              onClick={onScrollToTop}
-          >
+        <span
+          className="up-button animate__animated"
+          id="myBtn"
+          rel="noopener noreferrer"
+          onClick={onScrollToTop}
+        >
           &#11165;
         </span>
-        </div>
+      </div>
     );
   }
 }

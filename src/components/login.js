@@ -7,8 +7,7 @@ import RegistrationPage from './registrationForm';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../App.css'
 
-
-const Login = () => {
+const RegistrationForm = () => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
 
@@ -58,8 +57,8 @@ const Login = () => {
 
         <form className='sign-in-form' onSubmit={loginUser}>
             <div className='text-center'>
-                <h1 className='sign-in-h1'>Kirjaudu sisään</h1>
-                <img className='sign-in-img' src='./images/logo_kuva.png'/>
+            <h1 className='sign-in-h1'>Kirjaudu sisään</h1>
+            <img className='sign-in-img' src='./images/logo_kuva.png'/>
             </div>
             <div className="form-outline mb-4">
                 <input id="form2Example1" className="form-control" value={login} onChange={handleLoginChange}/>
@@ -87,27 +86,7 @@ const Login = () => {
           &#11165;
         </span>
         </form>
-        /*<section>
-            <form className='mx-1 mx-md-4' onSubmit={loginUser}>
-                <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-user fa-lg me-3 fa-fw"></i>
-                    <div className="form-outline flex-fill mb-0">
-                        <input type="text" id="form3Example1c" className="form-control" value={login} onChange={handleLoginChange}/>
-                        <label className="form-label" htmlFor="form3Example1c">Login</label>
-                    </div>
-                </div>
-                <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
-                    <div className="form-outline flex-fill mb-0">
-                        <input type="password" id="form3Example4c" className="form-control" value={password} onChange={handlePasswordChange}/>
-                        <label className="form-label" htmlFor="form3Example4c">Password</label>
-                    </div>
-                </div>
-                <button type='submit'>Register</button>
-            </form>
-        </section>*/
-
     )
 }
 
-export default Login;
+export default RegistrationForm;

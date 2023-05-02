@@ -56,7 +56,7 @@ const Article = ({
             </article>
         )
     }
-  
+
   return (
     <article className="article" id={id}>
       <figure>

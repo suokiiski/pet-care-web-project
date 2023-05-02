@@ -78,6 +78,7 @@ const Header = ({onMainButtonClick, onPeopleButtonClick, onPetsButtonClick, onLo
             </div>
         </nav>
     )
+
 }
 
 export default Header;
