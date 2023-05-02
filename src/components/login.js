@@ -1,12 +1,14 @@
 import React from "react";
 import {useState} from "react";
+import { BrowserRouter as Router, Routes, Route}
+    from 'react-router-dom';
+import RegistrationPage from './registrationForm';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import '../App.css'
 
-const debounce = require("lodash.debounce");
 
-const RegistrationForm = () => {
+const Login = () => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
 
@@ -36,7 +38,6 @@ const RegistrationForm = () => {
         if(result.status === 'ok') {
             localStorage.setItem('status', 'loggedIn');
             localStorage.setItem('login', login);
-            console.log('Got the token: ', result.data);
             alert('Tervetuloa '+ login + '!');
         } else {
             alert(result.error);
@@ -57,8 +58,8 @@ const RegistrationForm = () => {
 
         <form className='sign-in-form' onSubmit={loginUser}>
             <div className='text-center'>
-            <h1 className='sign-in-h1'>Kirjaudu sisään</h1>
-            <img className='sign-in-img' src='./images/logo_kuva.png'/>
+                <h1 className='sign-in-h1'>Kirjaudu sisään</h1>
+                <img className='sign-in-img' src='./images/logo_kuva.png'/>
             </div>
             <div className="form-outline mb-4">
                 <input id="form2Example1" className="form-control" value={login} onChange={handleLoginChange}/>
@@ -75,7 +76,7 @@ const RegistrationForm = () => {
             </div>
 
             <div className='text-center'>
-                <p>Jos sinulla ei ole vielä tiliä <br/> <a href="#!">Rekisteröidy</a></p>
+                <p>Jos sinulla ei ole vielä tiliä <br/> <a href="/registration">Rekisteröidy</a></p>
             </div>
             <span
                 className="up-button animate__animated"
@@ -95,7 +96,6 @@ const RegistrationForm = () => {
                         <label className="form-label" htmlFor="form3Example1c">Login</label>
                     </div>
                 </div>
-
                 <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
@@ -110,4 +110,4 @@ const RegistrationForm = () => {
     )
 }
 
-export default RegistrationForm;
+export default Login;

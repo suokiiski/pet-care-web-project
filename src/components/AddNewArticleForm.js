@@ -19,7 +19,7 @@ const STATE = {
   cat: false,
   img: "",
   omistaja: false,
-  username: localStorage.getItem("login"),
+  username: localStorage.getItem('login')
 };
 
 class AddNewArticle extends Component {

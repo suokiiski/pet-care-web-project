@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ArticleList from "./ArticleList";
 import Modal from "./Modal";
 import AddNewArticleForm from "./AddNewArticleForm";
+import HeroSection from "./Hero";
 
 //styles
 import "../styles/Main.css";
@@ -17,8 +18,8 @@ window.onscroll = debounce(scrollFunction, 250);
 function scrollFunction() {
   const myButton = document.getElementById("myBtn");
   if (
-    document.body.scrollTop > 100 ||
-    document.documentElement.scrollTop > 100
+      document.body.scrollTop > 100 ||
+      document.documentElement.scrollTop > 100
   ) {
     myButton.style.display = "block";
     myButton.classList.add("animate__bounceInDown");
@@ -112,7 +113,7 @@ class Main extends Component {
       editModalOpen: false,
       showModal: false,
       articles: this.props.data.map((item) =>
-        item.id === id ? newArticle : item
+          item.id === id ? newArticle : item
       ),
     }));
   };
@@ -152,50 +153,84 @@ class Main extends Component {
 
   render() {
     const { showModal, editModalOpen } = this.state;
-    return (
-      <div className="main_container">
-        {showModal && (
-          <Modal onClose={this.toggleModal}>
-            <button onClick={this.toggleModal} className="close-btn">
-              X
-            </button>
-            <AddNewArticleForm
-              onClose={this.toggleModal}
-              onSubmit={this.addNewArticle}
-            />
-          </Modal>
-        )}
+    const { onPeopleButtonClick, onPetsButtonClick } = this.props;
 
-        <button className="add-new-article-btn" onClick={this.toggleModal}>
-          Uusi ilmoitus
-        </button>
-        <ArticleList
-          items={this.state.articles}
-          deleteArticle={this.deleteArticle}
-          handleOpen={this.handleOpenEditModal}
-          saveOnFavoutires={this.saveOnFavoutires}
-        />
-        {editModalOpen && (
-          <Modal onClose={this.toggleModal}>
-            <button onClick={this.toggleModal} className="close-btn">
-              X
-            </button>
-            <AddNewArticleForm
-              onClose={this.toggleModal}
-              onSubmit={this.editArticle}
-            />
-          </Modal>
-        )}
-
-        <span
-          class="up-button animate__animated"
-          id="myBtn"
-          rel="noopener noreferrer"
-          onClick={onScrollToTop}
-        >
+    if(localStorage.getItem('status') === null) {
+      return (
+          <div className="main_container">
+            <HeroSection
+                onPeopleButtonClick={onPeopleButtonClick}
+                onPetsButtonClick={onPetsButtonClick} />
+            {showModal && (
+                <Modal onClose={this.toggleModal}>
+                  <button onClick={this.toggleModal} className="close-btn">
+                    X
+                  </button>
+                  <AddNewArticleForm
+                      onClose={this.toggleModal}
+                      onSubmit={this.addNewArticle}
+                  />
+                </Modal>
+            )}
+            <ArticleList items={this.props.data} />
+            <span
+                className="up-button animate__animated"
+                id="myBtn"
+                rel="noopener noreferrer"
+                onClick={onScrollToTop}
+            >
           &#11165;
         </span>
-      </div>
+          </div>
+      )
+    }
+    return (
+        <div className="main_container">
+          <HeroSection
+              onPeopleButtonClick={onPeopleButtonClick}
+              onPetsButtonClick={onPetsButtonClick} />
+          {showModal && (
+              <Modal onClose={this.toggleModal}>
+                <button onClick={this.toggleModal} className="close-btn">
+                  X
+                </button>
+                <AddNewArticleForm
+                    onClose={this.toggleModal}
+                    onSubmit={this.addNewArticle}
+                />
+              </Modal>
+          )}
+
+          <button className="add-new-article-btn heroB" onClick={this.toggleModal}>
+            Uusi ilmoitus
+          </button>
+          <ArticleList
+              items={this.state.articles}
+              deleteArticle={this.deleteArticle}
+              handleOpen={this.handleOpenEditModal}
+              saveOnFavoutires={this.saveOnFavoutires}
+          />
+          {editModalOpen && (
+              <Modal onClose={this.toggleModal}>
+                <button onClick={this.toggleModal} className="close-btn">
+                  X
+                </button>
+                <AddNewArticleForm
+                    onClose={this.toggleModal}
+                    onSubmit={this.editArticle}
+                />
+              </Modal>
+          )}
+
+          <span
+              class="up-button animate__animated"
+              id="myBtn"
+              rel="noopener noreferrer"
+              onClick={onScrollToTop}
+          >
+          &#11165;
+        </span>
+        </div>
     );
   }
 }
