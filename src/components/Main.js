@@ -207,7 +207,7 @@ class Main extends Component {
               </Modal>
           )}
 
-        <button className="add-new-article-btn heroB" onClick={this.toggleModal}>
+        <button className="add-new-article-btn heroB" onClick={this.openModal}>
           Uusi ilmoitus
         </button>
         <ArticleList
