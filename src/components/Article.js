@@ -14,7 +14,7 @@ const Article = ({
   omistaja,
   cat,
   deleteArticle,
-   username,
+  username,
   handleOpen,
   saveOnFavoutires,
 }) => {

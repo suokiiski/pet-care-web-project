@@ -19,12 +19,19 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
 
+/**
+ * Vastaa /api/notes-osoitteeseen lähettämään GET-pyyntöön, lähettää kaikki tietokannasta löytyvät ilmoitukset vastauksena
+ */
 app.get('/api/notes', (req, res) => {
     Note.find({}).then(notes => {
         res.json(notes)
     })
 });
 
+/**
+ * Vastaa /api/notes/:id-osoitteeseen lähettämään GET-pyyntöön. Lähettää vastauksena ilmoituksen, jolla on sama id kuin parametrissa,
+ * tai 404-statuksen, jos ilmoitusta ei löydy
+ */
 app.get('/api/notes/:id', (req, res) => {
     Note.findById(req.params.id)
         .then(note => {
@@ -40,6 +47,10 @@ app.get('/api/notes/:id', (req, res) => {
         })
 });
 
+/**
+ * Vastaa /api/notes/:id-osoitteeseen lähettämään DELETE-pyyntöön. Lähettää vastauksena status 204, jos ilmoitus löytyi,
+ * tai status 400, jos ilmoitusta ei löytynyt
+ */
 app.delete('/api/notes/:id', (req, res) => {
     Note.findByIdAndRemove(req.params.id)
         .then(result => {
@@ -50,6 +61,10 @@ app.delete('/api/notes/:id', (req, res) => {
         })
 })
 
+/**
+ * Vastaa /api/notes-osoitteeseen lähettämään POST-pyyntöön. Tallentaa uuden ilmoituksen tai lähettää status 400 vastauksena,
+ * jos joku pakollisista kentistä puuttuu
+ */
 app.post('/api/notes', (req, res) => {
     const body = req.body;
 
@@ -67,7 +82,6 @@ app.post('/api/notes', (req, res) => {
         }); 
     }
 
-  //username lisätty, poista jos ei toimi
   const newNote = new Note({
     src:
       body.src ||
@@ -86,6 +100,10 @@ app.post('/api/notes', (req, res) => {
         });
 });
 
+/**
+ * Vastaa /api/notes/:id-osoitteeseen lähettämään PUT-pyyntöön. Korjaa ilmoituksen tietoja tai lähettä status 400 vastauksena,
+ * jos kyseessä olevaa ilmoitusta ei ole olemassa
+ */
 app.put('/api/notes/:id', (req, res) => {
     const body = req.body;
 
@@ -94,7 +112,9 @@ app.put('/api/notes/:id', (req, res) => {
         text: body.text,
         nimi: body.nimi,
         tel: body.tel,
-        cat: body.cat
+        cat: body.cat,
+        omistaja: body.omistaja,
+        username: body.username
     }
 
     Note.findByIdAndUpdate(req.params.id, newNote, {new: true})
@@ -106,8 +126,10 @@ app.put('/api/notes/:id', (req, res) => {
         })
 })
 
-//USER AUTHENTICATION STUFF STARTS HERE
-
+/**
+ * Vastaa /api/login-osoitteeseen lähettämään POST-pyyntöön. Tarkistaa onko käyttäjä olemassa ja onko käyttäjänimi ja
+ * salasana oikein.
+ */
 app.post('/api/login', async (req, res) => {
     const {login, password} = req.body;
 
@@ -131,7 +153,10 @@ app.post('/api/login', async (req, res) => {
     res.json({status: 'error', error: 'Invalid username/password'});
 })
 
-//JOS EI TOIMI, TARKISTA ENSIN ETTÄ MUUTTUJILLA ON KAIKIALLA SAMAT NIMET
+/**
+ * Vastaa /api/login-osoitteeseen lähettämään POST-pyyntöön. Tarkistaa onko käyttäjänimi ja salasana oikeassa muodossa ja
+ * kryptaa salasanan
+ */
 app.post('/api/register', async (req, res) => {
     const {login, password: plainTextPassword} = req.body;
 

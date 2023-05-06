@@ -6,19 +6,38 @@ import '../App.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import '../App.css';
 
+/**
+ * Palauttaa registrationForm-komponentin ja määrittää sen toimintaa
+ * @returns registrationForm-komponentti, joka renderöi rekisteröintilomakkeen
+ * @constructor
+ */
 const RegistrationForm = () => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
 
+    /**
+     * Käsittelee muutoksia joita käyttäjä tekee login-tekstikentässä
+     * @param event kentän sisältö tietyllä hetkellä
+     */
     const handleLoginChange = (event) => {
         setLogin(event.target.value);
     }
 
+    /**
+     * Käsittelee muutoksia joita käyttäjä tekee password-tekstikentässä
+     * @param event kentän sisältö tietyllä hetkellä
+     */
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
         console.log(event.target.value);
     }
 
+    /**
+     * Metodi lähettää käyttäjän antamat tunnukset serverille rekisteröintiä varten ja saa sieltä vastauksen siitä,
+     * pääseekö käyttäjä rekisteröitymään annetuilla tunnuksilla vai ei
+     * @param event tapahtuma jonka yhteydessä metodia kutsutaan (submit)
+     * @returns {Promise<void>}
+     */
     async function registerUser(event) {
         event.preventDefault();
 
@@ -42,6 +61,9 @@ const RegistrationForm = () => {
         }
     }
 
+    /**
+     * Siirtää näkymää sivun alkuun
+     */
     function onScrollToTop() {
         window.scrollTo({
             top: 0,

@@ -1,25 +1,40 @@
 import React from "react";
 import {useState} from "react";
-import { BrowserRouter as Router, Routes, Route}
-    from 'react-router-dom';
-import RegistrationPage from './registrationForm';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import '../App.css'
 
+/**
+ * Palauttaa login-lomponentin ja määrittää sen toimintaa
+ * @returns login-komponentti joka renderöi kirjautumislomakkeen
+ * @constructor
+ */
 const RegistrationForm = () => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
 
+    /**
+     * Käsittelee muutoksia joita käyttäjä tekee login-tekstikentässä
+     * @param event tekstikentän sisältö tietyllä hetkellä
+     */
     const handleLoginChange = (event) => {
         setLogin(event.target.value);
     }
 
+    /**
+     * Käsittelee muutoksia joita käyttäjä tekee password-tekstikentässä
+     * @param event kentän sisältö tietyllä hetkellä
+     */
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
         console.log(event.target.value);
     }
 
+    /**
+     * Metodi lähettää käyttäjän antamat tunnukset serverille, ja saa sieltä vastauksen siitä, pääseekö käyttäjä kirjautumaan vai ei
+     * @param event tapahtuma jonka yhteydessä metodia kutsutaan (submit)
+     * @returns {Promise<void>}
+     */
     async function loginUser(event) {
         event.preventDefault();
 
@@ -43,6 +58,9 @@ const RegistrationForm = () => {
         }
     }
 
+    /**
+     * Siirtää näkymää sivun alkuun
+     */
     function onScrollToTop() {
         window.scrollTo({
             top: 0,

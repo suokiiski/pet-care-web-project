@@ -5,6 +5,11 @@ import {phone} from 'react-icons-kit/icomoon/phone'
 import {mail} from 'react-icons-kit/icomoon/mail'
 import {home} from 'react-icons-kit/icomoon/home'
 
+/**
+ * Palauttaa footer-komponentin
+ * @returns footer eli sivun alatunniste
+ * @constructor
+ */
 const Footer = () => {
 
     return (
