@@ -10,7 +10,6 @@ import SendIcon from "@mui/icons-material/Send";
 import "../styles/Modal.css";
 import "../styles/AddNewArticle.css";
 
-//username lisätty, poista jos ei toimi
 const STATE = {
   name: "",
   tel: "",

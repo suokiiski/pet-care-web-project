@@ -45,7 +45,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App">{/*
       <Header onMainButtonClick={handleMainButtonClick} onPeopleButtonClick={handlePeopleButtonClick} onPetsButtonClick={handlePetsButtonClick} onLoginButtonClick={handleLoginButtonClick}/>
       {visibleComponent === 'Main' ? (
           <Main data={data} addToRender={render}/>
@@ -55,9 +55,12 @@ function App() {
           <Pets data={data} addToRender={render} />
       ) : (
           <Login data={data} addToRender={render} />
-      )}
+      )}*/}
       <Router>
+        <Header />
         <Routes>
+          <Route exact path='/' element={<Main data={data} addToRender={render} />} />>;
+          <Route path='/sign-in' element={<Login />} />
           <Route path='/registration' element={<RegistrationForm />} />
         </Routes>
       </Router>
