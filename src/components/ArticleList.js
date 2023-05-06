@@ -8,7 +8,10 @@ const ArticleList = ({
                        saveOnFavoutires,
                      }) => (
     <div className="main_container">
-      {items.map(
+      {items
+          .slice()
+          .reverse()
+          .map(
           ({ src, alt, id, tel, figcaption, text, cat, omistaja, nimi, username }) => (
               <Article
                   key={id}

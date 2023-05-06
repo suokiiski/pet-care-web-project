@@ -17,21 +17,6 @@ function App() {
   const [data, setData] = useState([]);
   const [visibleComponent, setVisibleComponent] = useState('Main');
 
-  const handleMainButtonClick = () => {
-    setVisibleComponent('Main');
-  }
-  const handlePeopleButtonClick = () => {
-    setVisibleComponent('People');
-  };
-
-  const handlePetsButtonClick = () => {
-    setVisibleComponent('Pets');
-  };
-
-  const handleLoginButtonClick = () => {
-    setVisibleComponent('Login')
-  };
-
 
   useEffect(() => {
     posterService.getAll().then((resp) => {
@@ -45,21 +30,13 @@ function App() {
   };
 
   return (
-    <div className="App">{/*
-      <Header onMainButtonClick={handleMainButtonClick} onPeopleButtonClick={handlePeopleButtonClick} onPetsButtonClick={handlePetsButtonClick} onLoginButtonClick={handleLoginButtonClick}/>
-      {visibleComponent === 'Main' ? (
-          <Main data={data} addToRender={render}/>
-      ) : visibleComponent === 'People' ? (
-          <People data={data} addToRender={render} />
-      ) : visibleComponent === 'Pets' ? (
-          <Pets data={data} addToRender={render} />
-      ) : (
-          <Login data={data} addToRender={render} />
-      )}*/}
+    <div className="App">
       <Router>
         <Header />
         <Routes>
           <Route exact path='/' element={<Main data={data} addToRender={render} />} />>;
+          <Route path='/people' element={<People/>}/>
+          <Route path='/pets' element={<Pets/>}/>
           <Route path='/sign-in' element={<Login />} />
           <Route path='/registration' element={<RegistrationForm />} />
         </Routes>
