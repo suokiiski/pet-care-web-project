@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import '../App.css';
 
-function HeroSection(props) {
+function HeroSection() {
 
     return (
         <section className="hero">
@@ -12,8 +12,6 @@ function HeroSection(props) {
                 <p>Meiltä löydät lenkittäjät koirallesi ja viikonlopun rapsuttajat kissoillesi. <br/>
                     Voit tarjota myös omaa aikaasi muiden lemmikeille.</p>
                 <h2 className="heroH2">Tutustu tarjontaamme:</h2>
-            <button className="heroB" onClick={props.onPetsButtonClick}>Lemmikit</button>
-            <button className="heroB" onClick={props.onPeopleButtonClick}>Hoitajat</button>
             </div>
         </section>
     );

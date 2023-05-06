@@ -159,14 +159,11 @@ class Main extends Component {
 
   render() {
     const { showModal, editModalOpen } = this.state;
-    const { onPeopleButtonClick, onPetsButtonClick } = this.props;
 
     if(localStorage.getItem('status') === null) {
       return (
           <div className="main_container">
-            <HeroSection
-                onPeopleButtonClick={onPeopleButtonClick}
-                onPetsButtonClick={onPetsButtonClick} />
+            <HeroSection/>
             {showModal && (
                 <Modal onClose={this.closeModal}>
                   <button onClick={this.closeModal} className="close-btn">
@@ -192,9 +189,7 @@ class Main extends Component {
     }
     return (
         <div className="main_container">
-          <HeroSection
-              onPeopleButtonClick={onPeopleButtonClick}
-              onPetsButtonClick={onPetsButtonClick} />
+          <HeroSection/>
           {showModal && (
               <Modal onClose={this.closeModal}>
                 <button onClick={this.closeModal} className="close-btn">

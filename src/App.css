@@ -105,13 +105,11 @@ button .btn .btn-primary .btn-block .mb-4 {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
-  opacity: 20%;
 }
 
 @media (min-width: 1000px) {
   .hero::before {
     background-size: contain;
-    opacity: 40%;
   }
 }
 

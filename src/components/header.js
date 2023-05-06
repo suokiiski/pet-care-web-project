@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/Header.css'
 
@@ -104,9 +104,6 @@ const Header = ({onMainButtonClick, onPeopleButtonClick, onPetsButtonClick, onLo
                                 <button className="nav-link" onClick={onPeopleButtonClick}>Hoitajat</button>
                             </li>
                             <li className="nav-item">
-                                <button className="nav-link">Vinkit</button>
-                            </li>
-                            <li className="nav-item">
                                 <button className="nav-link" onClick={handleLogOut}>Kirjaudu ulos</button>
                             </li>
                         </ul>
@@ -136,9 +133,6 @@ const Header = ({onMainButtonClick, onPeopleButtonClick, onPetsButtonClick, onLo
                         </li>
                         <li className="nav-item">
                             <button className="nav-link" onClick={onPeopleButtonClick}>Hoitajat</button>
-                        </li>
-                        <li className="nav-item">
-                            <button className="nav-link">Vinkit</button>
                         </li>
                         <li className="nav-item">
                             <button className="nav-link" onClick={onLoginButtonClick}>Kirjaudu sisään</button>

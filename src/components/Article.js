@@ -6,7 +6,6 @@ const Article = ({
   src,
   alt,
   nimi,
-  name,
   id,
   tel,
   text,
@@ -39,7 +38,7 @@ const Article = ({
                 <div className="article_nimi_container">
                     <h2 className="article_nimi">
                         {cat ? "😺" : "🐶"} {omistaja ? "Omistaja: " : "Hoitaja: "}
-                        {nimi} {name}
+                        {nimi}
                     </h2>
                     <a href="tel:123-456-7890" className="article_tel">
                         puh. {tel}
@@ -76,7 +75,7 @@ const Article = ({
       <div className="article_nimi_container">
         <h2 className="article_nimi">
           {cat ? "😺" : "🐶"} {omistaja ? "Omistaja: " : "Hoitaja: "}
-          {nimi} {name}
+          {nimi}
         </h2>
         <a href="tel:123-456-7890" className="article_tel">
           puh. {tel}

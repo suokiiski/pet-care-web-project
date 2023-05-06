@@ -1,13 +1,13 @@
 import axios from "axios";
-const baseUrl = 'http://localhost:3001/api/notes';
+const baseUrl = "http://localhost:3001/api/notes";
 
 /**
  * Palauttaa serverilta kaikki ilmoitukset
  * @returns {Promise<axios.AxiosResponse<any>>}
  */
 const getAll = () => {
-    return axios.get(baseUrl)
-}
+  return axios.get(baseUrl);
+};
 
 /**
  * Lähettää vastaluotu ilmoitus serverille
@@ -15,8 +15,8 @@ const getAll = () => {
  * @returns {Promise<axios.AxiosResponse<any>>}
  */
 const create = (newObject) => {
-    return axios.post(baseUrl, newObject)
-}
+  return axios.post(baseUrl, newObject);
+};
 
 /**
  * Muokkaa olemassa olevan ilmoituksen sisältöä
@@ -25,8 +25,8 @@ const create = (newObject) => {
  * @returns {Promise<axios.AxiosResponse<any>>}
  */
 const update = (id, newObject) => {
-    return axios.put(`${baseUrl}/${id}`, newObject)
-}
+  return axios.put(`${baseUrl}/${id}`, newObject);
+};
 
 /**
  * Poistaa ilmoitusta serverilta
@@ -34,14 +34,12 @@ const update = (id, newObject) => {
  * @returns {Promise<axios.AxiosResponse<any>>}
  */
 const remove = (id) => {
-    return axios.delete(`${baseUrl}/${id}`)
-}
-
+  return axios.delete(`${baseUrl}/${id}`);
+};
 
 export default {
-    getAll,
-    create,
-    update,
-    remove
-}
-
+  getAll: getAll,
+  create: create,
+  update: update,
+  remove: remove,
+};
