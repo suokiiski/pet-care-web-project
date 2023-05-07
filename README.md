@@ -1,6 +1,8 @@
 # PetNanny-websovellus
 ## Web-sovelluskehitys 1 -kurssin projektityö
 
+![petnanny_sivu](https://user-images.githubusercontent.com/104062080/236695532-2f5f54e7-babc-4200-8334-deda42c6824f.png)
+
 ### Tekijät: Vera Finogenova, Irina Romjalis, Kirsi Tolonen
 
 PetNanny on React-websovellus, jossa käyttäjät voivat jättää ilmoituksia lemmikeistään, jotka tarvitsevat väliaikaista hoitajaa. Myös ihmiset, jotka haluaisivat hoitaa muiden lemmikkejä, voivat jättää ilmoituksia. Ilmoitukset näkyvät websovelluksen etusivulla uusimmasta vanhimpaan.
