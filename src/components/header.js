@@ -2,8 +2,17 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/Header.css'
 
+/**
+ * Renderöi navbarin
+ * @returns {JSX.Element} navbar, jossa on linkki sisäänkirjautumissivuun, jos käyttäjä ei ole kirjautunut, tai linkki uloskirjautumiseen,
+ * jos käyttäjä on kirjautunut
+ * @constructor
+ */
 const Header = () => {
 
+    /**
+     * Hoitaa käyttäjän uloskirjautumista
+     */
     const handleLogOut = () => {
         localStorage.removeItem('status');
         localStorage.setItem('login', null);

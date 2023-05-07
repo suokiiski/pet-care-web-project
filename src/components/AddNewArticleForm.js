@@ -21,11 +21,18 @@ const STATE = {
     username: localStorage.getItem("login"),
 };
 
+/**
+ * Luokka hoitaa uusien ilmoitusten lisäämistä
+ */
 class AddNewArticle extends Component {
     state = {
         ...STATE,
     };
 
+    /**
+     * Käsittelee muutoksia joita käyttäjä tekee ilmoituslomakkeen kenttiin
+     * @param target tehty muutos
+     */
     // * new state
     handleChange = ({ target }) => {
         const { name, value, checked, type } = target;
@@ -34,6 +41,10 @@ class AddNewArticle extends Component {
         this.setState({ [name]: type === "checkbox" ? checked : value });
     };
 
+    /**
+     * Hoitaa ilmoituksen lähettämistä
+     * @param evt tapahtuma jonka yhteydessä metodia kutsutaan (lomakkeen lälhettäminen)
+     */
     // * form submit
     handleSubmit = (evt) => {
         evt.preventDefault();

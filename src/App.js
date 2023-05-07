@@ -13,10 +13,14 @@ import "./App.css";
 
 import { useState, useEffect } from "react";
 
+/**
+ * Renderöi kaikkea sivuston sisältöä
+ * @returns {JSX.Element} sivuston sisältö
+ * @constructor
+ */
 function App() {
   const [data, setData] = useState([]);
   const [visibleComponent, setVisibleComponent] = useState('Main');
-
 
   useEffect(() => {
     posterService.getAll().then((resp) => {
@@ -24,6 +28,10 @@ function App() {
     });
   }, []);
 
+  /**
+   * Renderöi uudet ilmoitukset kun niitä luodaan
+   * @param newObj uusi ilmoitus
+   */
   const render = (newObj) => {
     console.log(newObj);
     setData([...newObj, ...data]);

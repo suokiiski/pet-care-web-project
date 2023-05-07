@@ -1,6 +1,11 @@
 import React from "react";
 import '../App.css';
 
+/**
+ * Renderöi sivun hero-osiota, joka on navigointipalkin ja ilmoitusten välissä
+ * @returns {JSX.Element} sivuston hero-osio
+ * @constructor
+ */
 function HeroSection() {
 
     return (

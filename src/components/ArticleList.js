@@ -1,6 +1,15 @@
 import React from "react";
 import Article from "./Article.js";
 
+/**
+ * Renderöi kaikki ilmoitukset
+ * @param items renderöitävät ilmoitukset
+ * @param deleteArticle ilmoituksen poistamisfunktio
+ * @param handleOpen muokkauslomakkeen avausfunktio
+ * @param saveOnFavoutires funktio, joka tallentaa ilmoitus suosikkeihin
+ * @returns {JSX.Element} renderöityt artikkelit
+ * @constructor
+ */
 const ArticleList = ({
                        items,
                        deleteArticle,

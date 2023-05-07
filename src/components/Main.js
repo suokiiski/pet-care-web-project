@@ -15,6 +15,9 @@ const debounce = require("lodash.debounce");
 
 window.onscroll = debounce(scrollFunction, 250);
 
+/**
+ * Määrittää milloin ylös skrollattava painike näkyy käyttäjän näytöllä ja milloin sitä piilotetaan
+ */
 function scrollFunction() {
   const myButton = document.getElementById("myBtn");
   if (
@@ -30,6 +33,9 @@ function scrollFunction() {
   }
 }
 
+/**
+ * Skrollaa näkymää ylös kun tästä toiminnasta vastaava nappi on painettu
+ */
 function onScrollToTop() {
   window.scrollTo({
     top: 0,
@@ -37,6 +43,10 @@ function onScrollToTop() {
     behavior: "smooth",
   });
 }
+
+/**
+ * Skrollaa näkymää alas
+ */
 function onScrollToBottom() {
   window.scrollTo({
     bottom: 0,
@@ -45,6 +55,10 @@ function onScrollToBottom() {
   });
 }
 
+/**
+ * Luokka renderöi käyttäjien luoman sisällön (ilmoitukset), sekä sisällön lisäämispainikkeen jos käyttäjä on kirjautunut sisään. Muuten
+ * painiketta ei renderöidä
+ */
 class Main extends Component {
   componentDidUpdate() {
     posterService.getAll().then((resp) => {
@@ -62,19 +76,29 @@ class Main extends Component {
     favourites: [],
   };
 
+  /**
+   * Hoitaa ilmoitusten lisäämislomakkeen avaamista
+   */
   closeModal = () => {
     this.setState(() => ({
       showModal: false,
       editModalOpen: false,
     }));
   };
+
+  /**
+   * Hoitaa lisäämislomakkeen sulkua
+   */
   openModal = () => {
     this.setState(() => ({
       showModal: true,
     }));
   };
 
-  //poista username jos ei toimi
+  /**
+   * Luo uuden ilmoituksen ja lähettää sen palvelimelle
+   * @param data ilmoituksen sisältö
+   */
   addNewArticle = (data) => {
     const { name, tel, text, cat, img, omistaja, username } = data;
     const article = {
@@ -99,6 +123,11 @@ class Main extends Component {
     posterService.create(article);
   };
 
+  /**
+   * Muuttaa ilmoituksen sisältöä sen jälkeen kuin se oli muokattu ja lähettää uusimman version ilmoituksesta serverille
+   * vanhan tilalle
+   * @param data ilmoituksen sisältö
+   */
   editArticle = (data) => {
     const { name, tel, text, cat, img, omistaja, username } = data;
     const id = this.state.id;
@@ -124,6 +153,10 @@ class Main extends Component {
     }));
   };
 
+  /**
+   * Vastaa ilmoituksen poistamisesta serverilta ja sivusta
+   * @param articleId poistettavan ilmoituksen id
+   */
   deleteArticle = (articleId) => {
     console.log(articleId);
     if (window.confirm("Do you really want to delete this article?")) {
@@ -139,6 +172,10 @@ class Main extends Component {
     }
   };
 
+  /**
+   * Hoitaa muokkauslomakkeen avaamista
+   * @param id muutettavan ilmoituksen id
+   */
   handleOpenEditModal = (id) => {
     this.setState(() => ({
       editModalOpen: true,
@@ -147,6 +184,10 @@ class Main extends Component {
     }));
   };
 
+  /**
+   * Tallentaa ilmoitukset suosikkeihin
+   * @param articleId tallennetavan ilmoituksen id
+   */
   saveOnFavoutires = (articleId) => {
     alert("Saved successfully!");
 

@@ -2,6 +2,26 @@
 import "../styles/Main.css";
 import "../styles/Article.css";
 
+/**
+ * Jos käyttäjän käyttäjänimi on sama kuin ilmoituksen tekijän käyttäjän käyttäjänimi, käyttäjä pystyy poistamaan ja muokkaamaan ilmoitusta.
+ * Muuten ei pysty
+ * @param src lemmikin kuvan osoite
+ * @param alt teksti jonka näytetään jos kuva ei toimi
+ * @param nimi ilmoittajan nimi
+ * @param id ilmoituksen id
+ * @param tel ilmoittajan puhelinnumero
+ * @param text ilmoituksen teksti
+ * @param figcaption teksti kuvan alla
+ * @param omistaja onko ilmoittaja lemmikin omistaja (true) tai hoitaja (false)
+ * @param cat onko hoidettava lemmikki kissa (true) vai koira (false)
+ * @param deleteArticle funktio joka käsittelee ilmoituksen poistamista
+ * @param username ilmoittajan käyttäjänimi
+ * @param handleOpen hoitaa uuden artikkelin muokkauslomakkeen avaamista
+ * @param saveOnFavoutires funktio joka tallentaa ilmoitusta käyttäjän suosikkeihin
+ * @returns {JSX.Element} artikkeli jossa poistamis- ja muokkauspainikkeet ovat mukana, jos käyttäjän käyttäjänimi on sama kuin ilmoittajan,
+ * tai ilman niitä painikkeita, jos käyttäjänimi ei ole sama
+ * @constructor
+ */
 const Article = ({
   src,
   alt,

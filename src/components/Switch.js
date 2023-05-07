@@ -1,6 +1,10 @@
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 
+/**
+ * Määrittää switch-painikkeiden tyyliä
+ * @type {StyledComponent<PropsOf<(props: SwitchProps) => JSX.Element> & MUIStyledCommonProps<Theme>, {}, {}>}
+ */
 const AntSwitch = styled(Switch)(({ theme }) => ({
   width: 28,
   height: 16,

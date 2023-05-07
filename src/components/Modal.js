@@ -4,6 +4,9 @@ import "../styles/Modal.css";
 
 const modalRoot = document.querySelector("#modal-root");
 
+/**
+ * Vastaa lisäämis-/muokkauslomakkeiden renderöinnistä sekä määrittää niiden käyttäytymistä
+ */
 class Modal extends PureComponent {
   componentDidMount() {
     window.addEventListener("keydown", this.handleKeyDown);

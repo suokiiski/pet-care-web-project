@@ -5,6 +5,9 @@ const myButton = document.getElementById("myBtn");
 
 myButton.addEventListener("click", onScrollToTop);
 
+/**
+ * Määrittää milloin ylös skrollattava painike näkyy käyttäjän näytöllä ja milloin sitä piilotetaan
+ */
 function scrollFunction() {
   if (
     document.body.scrollTop > 100 ||
@@ -19,6 +22,9 @@ function scrollFunction() {
   }
 }
 
+/**
+ * Skrollaa näkymää ylös kun tästä toiminnasta vastaava nappi on painettu
+ */
 function onScrollToTop() {
   myButton.classList.add("animate__bounceOutUp");
   window.scrollTo({
