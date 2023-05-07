@@ -22,3 +22,19 @@ Tämän jälkeen anna seuraava koemento sovelluksen pääkansiossa ja sovellus a
 npm install
 npm start
 ```
+### REST-apin kuvaus
+REST-rajapinta käyttää pyynnöissä kolmea eri osoitetta.
+
+<b>/api/notes</b> -osoitetta käytetään silloin kun pyynnöt liittyvät sivun sisältöön, eli ilmoituksiin. Siihen voi lähettää seuraavia pyyntöjä:<br>
+<b>GET</b>-pyyntö lähettää takaisin joko kaikki tietokannasta löytyvät ilmoitukset, tai, jos osoitteen loppuosaan on laitettu ilmoituksen id, se lähettää vain
+yhden ilmoituksen, jolla on sama id kuin pyynnön osoitteessa oleva. Jos vastaavaa id:tä ei löydy, vastauksena saa status 404<br>
+<b>DELETE</b>-pyyntö poistaa yksittäisen ilmoituksen tietokannasta. Pyynnön mukana lähetetään myös poistettavan ilmoituksen id muodossa /api/notes/id<br>
+<b>POST</b>-pyyntö laittaa uuden ilmoituksen tietokantaan<br>
+<b>PUT</b>-pyyntö korjaa olemassa olevan ilmoituksen sisältöä. Pyyntö lähetetään osoitteeseen muodossa /api/notes/id, jossa id on muutettavan ilmoituksen id.
+Jos kyseistä ilmoitusta ei ole olemassa, vastauksena saa statuksen 400<br>
+
+<b>/api/register</b> -osoitteeseen lähetetään pyyntöjä käyttäjien rekisteröinnin yhteydessä. Siihen on mahdollista lähettää vain seuraavaa pyyntöä:<br>
+<b>POST</b>-pyyntö luo uuden käyttäjän tietokantaan tai vastaa virhekoodilla 11000, jos käyttäjänimi on käytössä
+
+<b>/api/login</b> -osoitteeseen lähetetään sisäänkirjautumiseen liittyviä pyyntöjä, ja myös siihen voi lähettää vain yhtä pyyntötyyppiä:<br>
+<b>POST</b>-pyyntö tarkistaa onko käyttäjä olemassa ja ovatko käyttäjänimi ja salasana oikein. Jos kaikki on oikein, lähettää vastauksena tokenin
